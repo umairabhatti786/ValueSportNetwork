@@ -103,7 +103,9 @@ const Feed = ({ navigation }: any) => {
             paddingHorizontal: sizeHelper.calWp(40),
           }}
         >
-          <View style={{ ...appStyles.row, gap: sizeHelper.calWp(30) }}>
+          <TouchableOpacity
+            style={{ ...appStyles.row, gap: sizeHelper.calWp(30) }}
+          >
             <View style={{ gap: sizeHelper.calHp(5) }}>
               <CustomText
                 text={"Grizzlies @ Knicks"}
@@ -149,7 +151,7 @@ const Feed = ({ navigation }: any) => {
               // fontWeight="600"
               // fontFam={fonts.Inter_SemiBold}
             />
-          </View>
+          </TouchableOpacity>
           <Image
             style={{
               width: sizeHelper.calWp(23),
@@ -561,7 +563,8 @@ const Feed = ({ navigation }: any) => {
 
                   {/* <SportsBooks /> */}
                 </View>
-                <View
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Picks")}
                   style={{
                     backgroundColor: theme.colors.white,
                     paddingVertical: sizeHelper.calHp(30),
@@ -569,7 +572,7 @@ const Feed = ({ navigation }: any) => {
                   }}
                 >
                   <LeagueContainer />
-                </View>
+                </TouchableOpacity>
               </View>
             )}
           </View>

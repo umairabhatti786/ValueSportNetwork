@@ -1,0 +1,12 @@
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/CMakeFiles/appmodules.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/CMakeFiles/edit_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/CMakeFiles/rebuild_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+D:/ValueSportNetwork/android/app/.cxx/Debug/n394c1e2/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir

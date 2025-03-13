@@ -87,3 +87,9 @@ export type ScreenType = {
   children?: React.ReactNode; // Children components
   refreshControl?: React.ReactElement<RefreshControlProps>; // Refresh control component
 };
+
+export type PlayerType ={
+  pic:any,
+  name:string,
+  time:string
+}
