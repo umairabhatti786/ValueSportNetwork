@@ -10,9 +10,13 @@ import { images } from "../../../assets/pngs";
 import Player from "../../../components/Player";
 
 const picks = ({ navigation }: any) => {
-  const PlayersData = [
+  const SpreadPlayersData = [
     { pic: images.player1, name: "Marc Alex", time: "1hr ago" },
     { pic: images.player2, name: "Marc Alex", time: "1hr ago" },
+  ];
+  const MoneylinePlayersData = [
+    { pic: images.player3, name: "Marc Alex", time: "1hr ago" },
+    { pic: images.player4, name: "Marc Alex", time: "1hr ago" },
   ];
   const Tabs = ["SPREAD", "MONEY LINE", "PARLAYS", "OTHER"];
   const [activeTab, setActiveTab] = useState(0);
@@ -42,6 +46,7 @@ const picks = ({ navigation }: any) => {
             }}
           >
             <TouchableOpacity
+              onPress={() => navigation.goBack()}
               style={{
                 ...appStyles.row,
               }}
@@ -254,7 +259,7 @@ const picks = ({ navigation }: any) => {
               }}
             >
               <CustomText text={"Spread"} size={24} fontWeight="700" />
-              {PlayersData.map((item, index) => {
+              {SpreadPlayersData.map((item, index) => {
                 return (
                   <View style={{ gap: sizeHelper.calHp(20) }}>
                     <Player pic={item.pic} name={item.name} time={item.time} />
@@ -267,41 +272,141 @@ const picks = ({ navigation }: any) => {
         {/* //active tab 0 end */}
 
         {activeTab == 1 && (
-          <View
-            style={{
-              gap: sizeHelper.calHp(10),
-            }}
-          >
+          <View>
+            {/* // cards dev */}
             <View
               style={{
-                backgroundColor: theme.colors.white,
-                paddingVertical: sizeHelper.calHp(30),
-                gap: sizeHelper.calHp(30),
+                ...appStyles.row,
+                paddingHorizontal: sizeHelper.calWp(40),
+                paddingVertical: sizeHelper.calHp(25),
+                justifyContent: "space-between",
               }}
             >
+              {/* card 1 */}
               <View
                 style={{
-                  width: "100%",
-                  paddingHorizontal: sizeHelper.calWp(40),
+                  width: sizeHelper.calWp(320),
+                  height: sizeHelper.calHp(100),
+                  padding: 10,
+                  justifyContent: "space-between",
                 }}
               >
-                {/* <CustomSearch placeholder="Search" width={"80%"} /> */}
+                <View
+                  style={{ ...appStyles.row, justifyContent: "space-between" }}
+                >
+                  <View style={{ ...appStyles.row }}>
+                    <Image
+                      source={images.lakers}
+                      resizeMode="contain"
+                      style={{
+                        width: sizeHelper.calWp(40),
+                        height: sizeHelper.calHp(35),
+                        // width: 22,
+                        // height: 21,
+                      }}
+                    />
+                    <CustomText
+                      text={"MEM"}
+                      color="#797D86"
+                      size={20}
+                      style={{ marginLeft: sizeHelper.calWp(20) }}
+                    />
+                  </View>
+                  <CustomText
+                    text={"0"}
+                    fontWeight="700"
+                    color="#797D86"
+                    style={{ paddingLeft: 10 }}
+                  />
+                </View>
+                {/* bar */}
+                <View
+                  style={{
+                    width: "100%",
+                    height: sizeHelper.calHp(10),
+                    // height: 5,
+                    backgroundColor: "#D9D9D9",
+                    borderRadius: 5,
+                  }}
+                />
               </View>
-
-              {/* <SportsBooks /> */}
+              {/* card 2 */}
+              <View
+                style={{
+                  height: sizeHelper.calHp(100),
+                  width: sizeHelper.calWp(320),
+                  backgroundColor: "#F6F6F6",
+                  borderWidth: 0.1,
+                  borderColor: "#757575",
+                  borderRadius: 5,
+                  padding: 10,
+                  justifyContent: "space-between",
+                  shadowOffset: { width: 0, height: 0 },
+                  shadowColor: "#000000",
+                  shadowOpacity: 0.15, // Adjust for lighter shadow
+                  shadowRadius: 4, // Blurriness
+                  elevation: 4, // Required for Android
+                }}
+              >
+                <View
+                  style={{ ...appStyles.row, justifyContent: "space-between" }}
+                >
+                  <CustomText
+                    text={"1"}
+                    fontWeight="700"
+                    style={{ paddingLeft: 10 }}
+                  />
+                  <View style={{ ...appStyles.row }}>
+                    <CustomText
+                      text={"NYK"}
+                      size={20}
+                      style={{ marginRight: sizeHelper.calWp(20) }}
+                    />
+                    <Image
+                      source={images.mem}
+                      resizeMode="contain"
+                      style={{
+                        width: sizeHelper.calWp(40),
+                        height: sizeHelper.calHp(35),
+                        // width: 22,
+                        // height: 21,
+                      }}
+                    />
+                  </View>
+                </View>
+                {/* bar */}
+                <View
+                  style={{
+                    width: "100%",
+                    height: sizeHelper.calHp(10),
+                    // height: 5,
+                    backgroundColor: "#FF0000",
+                    borderRadius: 5,
+                  }}
+                />
+              </View>
             </View>
+            {/* //Moneyline */}
             <View
               style={{
-                backgroundColor: theme.colors.white,
-                paddingVertical: sizeHelper.calHp(30),
-                gap: sizeHelper.calHp(30),
+                borderWidth: 0.5,
+                borderColor: theme.colors.gray500,
+                padding: sizeHelper.calWp(40),
+                gap: sizeHelper.calHp(20),
               }}
             >
-              {/* <LeagueContainer /> */}
+              <CustomText text={"Moneyline"} size={24} fontWeight="700" />
+              {MoneylinePlayersData.map((item, index) => {
+                return (
+                  <View style={{ gap: sizeHelper.calHp(20) }}>
+                    <Player pic={item.pic} name={item.name} time={item.time} />
+                  </View>
+                );
+              })}
             </View>
           </View>
         )}
-        {/* //active tab 0 end */}
+        {/* //active tab 1 end */}
 
         {/* game guide */}
         <View

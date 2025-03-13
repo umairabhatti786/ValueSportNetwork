@@ -79,6 +79,8 @@ export const images = {
   lakers: require("../pngs/lakers.png"),
   player1: require("../pngs/player_1.png"),
   player2: require("../pngs/player2.png"),
+  player3: require("../pngs/player3.png"),
+  player4: require("../pngs/player4.png"),
   check: require("../pngs/check.png"),
   plusBox: require("../pngs/plusBox.png"),
   heart: require("../pngs/heart.png"),
