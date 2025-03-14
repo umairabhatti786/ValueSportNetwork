@@ -8,7 +8,7 @@ import { theme } from "../../utils/Themes";
 import CustomButton from "../Button";
 import { PlayerType } from "../../utils/Types";
 
-const Player = ({ pic, name, time }: PlayerType) => {
+const Player = ({ pic, name, time, record }: PlayerType) => {
   return (
     <TouchableOpacity
       style={{
@@ -45,7 +45,11 @@ const Player = ({ pic, name, time }: PlayerType) => {
               }}
             />
           </View>
-          <CustomText text={time} size={16} color={theme.colors.gray500} />
+          <CustomText
+            text={`${time} ${record ? ` | ${record}` : ""}`}
+            size={16}
+            color={theme.colors.gray500}
+          />
         </View>
       </View>
       <CustomButton

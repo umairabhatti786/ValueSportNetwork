@@ -18,23 +18,24 @@ const picks = ({ navigation }: any) => {
     { pic: images.player3, name: "Marc Alex", time: "1hr ago" },
     { pic: images.player4, name: "Marc Alex", time: "1hr ago" },
   ];
+  const PlayersData = [
+    {
+      pic: images.player3,
+      name: "Marc Alex",
+      time: "1hr ago",
+      record: " | NBA Record: +179.43u",
+    },
+  ];
   const Tabs = ["SPREAD", "MONEY LINE", "PARLAYS", "OTHER"];
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <ScreenLayout style={styles.main}>
-      <View
-        style={
-          {
-            // gap: sizeHelper.calHp(10),
-          }
-        }
-      >
+      <View>
         {/* header and tabs */}
         <View
           style={{
             gap: sizeHelper.calHp(20),
-            // backgroundColor: theme.colors.white,
           }}
         >
           {/* header */}
@@ -148,14 +149,14 @@ const picks = ({ navigation }: any) => {
                 style={{
                   height: sizeHelper.calHp(100),
                   width: sizeHelper.calWp(320),
-                  backgroundColor: "#F6F6F6",
-                  borderWidth: 0.1,
-                  borderColor: "#757575",
-                  borderRadius: 5,
-                  padding: 10,
+                  backgroundColor: theme.colors.grayF6,
+                  borderWidth: sizeHelper.calWp(1),
+                  borderColor: theme.colors.gray700,
+                  borderRadius: sizeHelper.calWp(5),
+                  padding: sizeHelper.calWp(15),
                   justifyContent: "space-between",
-                  shadowOffset: { width: 0, height: 0 },
-                  shadowColor: "#000000",
+                  // shadowOffset: { width: 0, height: 0 },
+                  shadowColor: theme.colors.black,
                   shadowOpacity: 0.15, // Adjust for lighter shadow
                   shadowRadius: 4, // Blurriness
                   elevation: 4, // Required for Android
@@ -182,20 +183,15 @@ const picks = ({ navigation }: any) => {
                       style={{ paddingLeft: 10 }}
                     />
                   </View>
-                  <CustomText
-                    text={"1"}
-                    fontWeight="700"
-                    style={{ paddingLeft: 10 }}
-                  />
+                  <CustomText text={"1"} fontWeight="700" />
                 </View>
                 {/* bar */}
                 <View
                   style={{
                     width: "100%",
                     height: sizeHelper.calHp(10),
-                    // height: 5,
-                    backgroundColor: "#FF0000",
-                    borderRadius: 5,
+                    backgroundColor: theme.colors.primary,
+                    borderRadius: sizeHelper.calHp(10),
                   }}
                 />
               </View>
@@ -204,8 +200,7 @@ const picks = ({ navigation }: any) => {
                 style={{
                   width: sizeHelper.calWp(320),
                   height: sizeHelper.calHp(100),
-                  //backgroundColor: "#F6F6F6",
-                  padding: 10,
+                  padding: sizeHelper.calHp(15),
                   justifyContent: "space-between",
                 }}
               >
@@ -215,15 +210,14 @@ const picks = ({ navigation }: any) => {
                   <CustomText
                     text={"0"}
                     fontWeight="700"
-                    color="#797D86"
-                    style={{ paddingLeft: 10 }}
+                    color={theme.colors.gray500}
                   />
                   <View style={{ ...appStyles.row }}>
                     <CustomText
                       text={"NYK"}
-                      color="#797D86"
+                      color={theme.colors.gray500}
                       size={20}
-                      style={{ paddingRight: 10 }}
+                      style={{ paddingRight: sizeHelper.calWp(20) }}
                     />
                     <Image
                       source={images.lakers}
@@ -231,8 +225,6 @@ const picks = ({ navigation }: any) => {
                       style={{
                         width: sizeHelper.calWp(40),
                         height: sizeHelper.calHp(35),
-                        // width: 22,
-                        // height: 21,
                       }}
                     />
                   </View>
@@ -242,9 +234,8 @@ const picks = ({ navigation }: any) => {
                   style={{
                     width: "100%",
                     height: sizeHelper.calHp(10),
-                    // height: 5,
                     backgroundColor: "#D9D9D9",
-                    borderRadius: 5,
+                    borderRadius: sizeHelper.calHp(10),
                   }}
                 />
               </View>
@@ -252,7 +243,7 @@ const picks = ({ navigation }: any) => {
             {/* //spread */}
             <View
               style={{
-                borderWidth: 0.5,
+                borderWidth: sizeHelper.calWp(1),
                 borderColor: theme.colors.gray500,
                 padding: sizeHelper.calWp(40),
                 gap: sizeHelper.calHp(20),
@@ -287,7 +278,7 @@ const picks = ({ navigation }: any) => {
                 style={{
                   width: sizeHelper.calWp(320),
                   height: sizeHelper.calHp(100),
-                  padding: 10,
+                  padding: sizeHelper.calWp(15),
                   justifyContent: "space-between",
                 }}
               >
@@ -301,13 +292,11 @@ const picks = ({ navigation }: any) => {
                       style={{
                         width: sizeHelper.calWp(40),
                         height: sizeHelper.calHp(35),
-                        // width: 22,
-                        // height: 21,
                       }}
                     />
                     <CustomText
                       text={"MEM"}
-                      color="#797D86"
+                      color={theme.colors.gray500}
                       size={20}
                       style={{ marginLeft: sizeHelper.calWp(20) }}
                     />
@@ -315,8 +304,7 @@ const picks = ({ navigation }: any) => {
                   <CustomText
                     text={"0"}
                     fontWeight="700"
-                    color="#797D86"
-                    style={{ paddingLeft: 10 }}
+                    color={theme.colors.gray500}
                   />
                 </View>
                 {/* bar */}
@@ -324,9 +312,8 @@ const picks = ({ navigation }: any) => {
                   style={{
                     width: "100%",
                     height: sizeHelper.calHp(10),
-                    // height: 5,
                     backgroundColor: "#D9D9D9",
-                    borderRadius: 5,
+                    borderRadius: sizeHelper.calHp(10),
                   }}
                 />
               </View>
@@ -335,14 +322,14 @@ const picks = ({ navigation }: any) => {
                 style={{
                   height: sizeHelper.calHp(100),
                   width: sizeHelper.calWp(320),
-                  backgroundColor: "#F6F6F6",
-                  borderWidth: 0.1,
-                  borderColor: "#757575",
-                  borderRadius: 5,
-                  padding: 10,
+                  backgroundColor: theme.colors.grayF6,
+                  borderWidth: sizeHelper.calWp(1),
+                  borderColor: theme.colors.gray700,
+                  borderRadius: sizeHelper.calWp(5),
+                  padding: sizeHelper.calWp(15),
                   justifyContent: "space-between",
-                  shadowOffset: { width: 0, height: 0 },
-                  shadowColor: "#000000",
+                  // shadowOffset: { width: 0, height: 0 },
+                  shadowColor: theme.colors.black,
                   shadowOpacity: 0.15, // Adjust for lighter shadow
                   shadowRadius: 4, // Blurriness
                   elevation: 4, // Required for Android
@@ -351,11 +338,7 @@ const picks = ({ navigation }: any) => {
                 <View
                   style={{ ...appStyles.row, justifyContent: "space-between" }}
                 >
-                  <CustomText
-                    text={"1"}
-                    fontWeight="700"
-                    style={{ paddingLeft: 10 }}
-                  />
+                  <CustomText text={"1"} fontWeight="700" />
                   <View style={{ ...appStyles.row }}>
                     <CustomText
                       text={"NYK"}
@@ -368,8 +351,6 @@ const picks = ({ navigation }: any) => {
                       style={{
                         width: sizeHelper.calWp(40),
                         height: sizeHelper.calHp(35),
-                        // width: 22,
-                        // height: 21,
                       }}
                     />
                   </View>
@@ -379,9 +360,8 @@ const picks = ({ navigation }: any) => {
                   style={{
                     width: "100%",
                     height: sizeHelper.calHp(10),
-                    // height: 5,
-                    backgroundColor: "#FF0000",
-                    borderRadius: 5,
+                    backgroundColor: theme.colors.primary,
+                    borderRadius: sizeHelper.calHp(10),
                   }}
                 />
               </View>
@@ -389,7 +369,7 @@ const picks = ({ navigation }: any) => {
             {/* //Moneyline */}
             <View
               style={{
-                borderWidth: 0.5,
+                borderWidth: sizeHelper.calWp(1),
                 borderColor: theme.colors.gray500,
                 padding: sizeHelper.calWp(40),
                 gap: sizeHelper.calHp(20),
@@ -407,6 +387,107 @@ const picks = ({ navigation }: any) => {
           </View>
         )}
         {/* //active tab 1 end */}
+        {activeTab == 2 && (
+          <View
+            style={{
+              paddingHorizontal: sizeHelper.calWp(40),
+              paddingVertical: sizeHelper.calHp(25),
+              gap: sizeHelper.calWp(20),
+            }}
+          >
+            <CustomText text={"Parlays"} size={24} fontWeight="700" />
+            {PlayersData.map((item, index) => {
+              return (
+                <View style={{ gap: sizeHelper.calHp(20) }}>
+                  {/* 1 */}
+                  <Player
+                    pic={item.pic}
+                    name={item.name}
+                    time={item.time}
+                    record={item.record}
+                  />
+                  {/* 2 */}
+                  <View
+                    style={{
+                      ...appStyles.row,
+                      gap: sizeHelper.calWp(10),
+                    }}
+                  >
+                    {/* imgs */}
+                    <View style={{ ...appStyles.row }}>
+                      <Image source={images.player1} style={styles.imgCircle} />
+                      <Image
+                        source={images.player2}
+                        style={[styles.imgCircle, { marginLeft: -20 }]}
+                      />
+                      <Image
+                        source={images.player3}
+                        style={[styles.imgCircle, { marginLeft: -15 }]}
+                      />
+                    </View>
+                    <View>
+                      <CustomText text={"3-Way Parlay"} size={20} />
+                      <View style={{ ...appStyles.row }}>
+                        <CustomText
+                          text={"+200  |"}
+                          size={16}
+                          color={theme.colors.gray500}
+                        />
+                        <CustomText
+                          text={"  0.1u"}
+                          size={16}
+                          color={theme.colors.gray400}
+                        />
+                      </View>
+                    </View>
+                  </View>
+                  {/* 3 */}
+                  <View
+                    style={{
+                      borderWidth: sizeHelper.calHp(0.5),
+                      borderColor: theme.colors.gray500,
+                      borderRadius: 10,
+                      gap: sizeHelper.calHp(20),
+                      padding: sizeHelper.calHp(20),
+                      width: "70%",
+                      alignSelf: "center",
+                    }}
+                  >
+                    {[1, 2, 3].map((i) => {
+                      return (
+                        <View style={{ ...appStyles.row }}>
+                          <Image
+                            source={images.player1}
+                            style={styles.imgCircle}
+                          />
+                          <View style={{ marginLeft: 10 }}>
+                            <View style={{ ...appStyles.row }}>
+                              <CustomText
+                                text={"Alex.D To Score 10+ Points | "}
+                                size={16}
+                              />
+                              <CustomText
+                                text={"-100"}
+                                size={16}
+                                color={theme.colors.gray500}
+                              />
+                            </View>
+                            <CustomText
+                              text={"MEM @NYK  |  1/28  1:30am"}
+                              size={16}
+                              color={theme.colors.gray500}
+                            />
+                          </View>
+                        </View>
+                      );
+                    })}
+                  </View>
+                </View>
+              );
+            })}
+          </View>
+        )}
+        {/* //active tab 2 end */}
 
         {/* game guide */}
         <View
@@ -483,5 +564,12 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: "#F5F5F5",
     backgroundColor: theme.colors.white,
+  },
+  imgCircle: {
+    width: 30,
+    height: 30,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: theme.colors.white,
   },
 });

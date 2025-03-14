@@ -91,5 +91,6 @@ export type ScreenType = {
 export type PlayerType ={
   pic:any,
   name:string,
-  time:string
+  time:string,
+  record?:string,
 }
