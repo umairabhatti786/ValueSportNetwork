@@ -84,4 +84,5 @@ export const images = {
   check: require("../pngs/check.png"),
   plusBox: require("../pngs/plusBox.png"),
   heart: require("../pngs/heart.png"),
+  downArrowCircled: require("../pngs/downArrowCircled.png"),
 };

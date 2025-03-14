@@ -32,8 +32,8 @@ const picks = ({ navigation }: any) => {
     return (
       <View
         style={{
-          borderBottomWidth: sizeHelper.calWp(1),
-          borderColor: theme.colors.gray500,
+          borderBottomWidth: 0.5,
+          borderBottomColor: theme.colors.gray500,
         }}
       >
         {PlayersData.map((item, index) => {
@@ -42,7 +42,7 @@ const picks = ({ navigation }: any) => {
               onPress={() => navigation.navigate("Betslip")}
               key={index}
               style={{
-                gap: sizeHelper.calHp(20),
+                gap: sizeHelper.calHp(30),
                 paddingHorizontal: sizeHelper.calWp(40),
                 paddingVertical: sizeHelper.calHp(25),
               }}
