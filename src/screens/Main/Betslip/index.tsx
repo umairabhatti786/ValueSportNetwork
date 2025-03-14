@@ -25,6 +25,22 @@ const Betslip = () => {
               size={30}
               fontWeight="900"
             />
+            {/* //notification */}
+            <View
+              style={{
+                backgroundColor: theme.colors.primary,
+                borderRadius: 50,
+                width: 20,
+                height: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                position: "absolute",
+                left: 50,
+                bottom: 10,
+              }}
+            >
+              <CustomText text={"1"} color={theme.colors.white} size={20} />
+            </View>
           </View>
           <Image
             source={images.downArrowCircled}
@@ -36,7 +52,10 @@ const Betslip = () => {
         <View
           style={{
             ...appStyles.row,
-            gap: sizeHelper.calWp(30),
+            // gap: sizeHelper.calWp(60),
+            justifyContent: "space-between",
+            paddingHorizontal: sizeHelper.calWp(25),
+            paddingTop: sizeHelper.calHp(25),
           }}
         >
           {Tabs.map((item, index) => {
@@ -61,7 +80,7 @@ const Betslip = () => {
                   style={{
                     height: sizeHelper.calHp(10),
                     width: "110%",
-                    alignItems: "flex-end",
+                    alignItems: "center",
                     justifyContent: "flex-end",
                     marginTop: sizeHelper.calHp(5),
                   }}
@@ -69,7 +88,7 @@ const Betslip = () => {
                   {activeTab == index && (
                     <View
                       style={{
-                        width: "100%",
+                        width: "150%",
                         height: sizeHelper.calHp(5.5),
                         backgroundColor: theme.colors.primary,
                         borderTopLeftRadius: sizeHelper.calWp(10),
