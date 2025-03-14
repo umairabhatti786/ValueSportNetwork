@@ -488,6 +488,119 @@ const picks = ({ navigation }: any) => {
           </View>
         )}
         {/* //active tab 2 end */}
+        {activeTab == 3 && (
+          <View>
+            <View
+              style={{
+                paddingHorizontal: sizeHelper.calWp(40),
+                paddingVertical: sizeHelper.calHp(25),
+                gap: sizeHelper.calWp(20),
+              }}
+            >
+              <CustomText text={"Other"} size={24} fontWeight="700" />
+
+              {PlayersData.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("Betslip")}
+                    key={index}
+                    style={{ gap: sizeHelper.calHp(20) }}
+                  >
+                    {/* Player Component */}
+                    <Player
+                      pic={item.pic}
+                      name={item.name}
+                      time={item.time}
+                      record={item.record}
+                    />
+
+                    {/* Betting Info */}
+                    <View
+                      style={{
+                        ...appStyles.row,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <View style={{ ...appStyles.row }}>
+                        <Image
+                          source={images.player1}
+                          style={styles.imgCircle}
+                        />
+                        <View style={{ marginLeft: 10 }}>
+                          <View style={{ ...appStyles.row }}>
+                            <CustomText
+                              text={"Alex.D To Score 10+ Points | "}
+                              size={16}
+                            />
+                            <CustomText
+                              text={"-100"}
+                              size={16}
+                              color={theme.colors.gray500}
+                            />
+                          </View>
+                          <CustomText
+                            text={"MEM @NYK  |  1/28  1:30am"}
+                            size={16}
+                            color={theme.colors.gray500}
+                          />
+                        </View>
+                      </View>
+
+                      {/* Icons Section */}
+                      <View
+                        style={{ ...appStyles.row, gap: sizeHelper.calWp(25) }}
+                      >
+                        {/* Plus Icon */}
+                        <View
+                          style={{
+                            ...appStyles.row,
+                            gap: sizeHelper.calWp(10),
+                          }}
+                        >
+                          <Image
+                            source={images.plusBox}
+                            resizeMode="contain"
+                            style={{
+                              height: sizeHelper.calWp(25),
+                              width: sizeHelper.calWp(25),
+                            }}
+                          />
+                          <CustomText
+                            text={"20"}
+                            size={20}
+                            color={theme.colors.gray700}
+                          />
+                        </View>
+
+                        {/* Heart Icon */}
+                        <View
+                          style={{
+                            ...appStyles.row,
+                            gap: sizeHelper.calWp(10),
+                          }}
+                        >
+                          <Image
+                            source={images.heart}
+                            resizeMode="contain"
+                            style={{
+                              height: sizeHelper.calWp(25),
+                              width: sizeHelper.calWp(25),
+                            }}
+                          />
+                          <CustomText
+                            text={"10"}
+                            size={20}
+                            color={theme.colors.gray700}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </View>
+        )}
 
         {/* game guide */}
         <View
