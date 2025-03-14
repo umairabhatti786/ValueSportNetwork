@@ -85,4 +85,12 @@ export const images = {
   plusBox: require("../pngs/plusBox.png"),
   heart: require("../pngs/heart.png"),
   downArrowCircled: require("../pngs/downArrowCircled.png"),
+  prev: require("../pngs/prev.png"),
+  next2: require("../pngs/next2.png"),
+  edit: require("../pngs/edit.png"),
+  logo1: require("../pngs/logo1.png"),
+  logo2: require("../pngs/logo2.png"),
+  logo3: require("../pngs/logo3.png"),
+  logo4: require("../pngs/logo4.png"),
+  bars: require("../pngs/bars.png"),
 };

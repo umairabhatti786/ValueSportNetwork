@@ -31,5 +31,6 @@ export const theme = {
     green: "#3FBF27",
 
     grayF6: "#F6F6F6",
+    grayD9: "#D9D9D9",
   },
 };

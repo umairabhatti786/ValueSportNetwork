@@ -17,6 +17,7 @@ import EVCalculator from "../../screens/Main/BettingTools/EVCalculator";
 import OddsConverter from "../../screens/Main/BettingTools/OddsConverter";
 import picks from "../../screens/Main/Picks";
 import Betslip from "../../screens/Main/Betslip";
+import ExploreUsers from "../../screens/Main/ExploreUsers";
 export type AppStackParamList = {
   Login: undefined;
   Signup: undefined;
@@ -35,6 +36,7 @@ export type AppStackParamList = {
   OddsConverter: undefined;
   Picks: undefined;
   Betslip: undefined;
+  ExploreUsers: undefined;
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -72,6 +74,7 @@ const AppStack = () => {
       <Stack.Screen name={"OddsConverter"} component={OddsConverter} />
       <Stack.Screen name={"Picks"} component={picks} />
       <Stack.Screen name={"Betslip"} component={Betslip} />
+      <Stack.Screen name={"ExploreUsers"} component={ExploreUsers} />
     </Stack.Navigator>
   );
 };
