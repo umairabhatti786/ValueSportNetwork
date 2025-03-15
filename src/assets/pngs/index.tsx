@@ -93,4 +93,6 @@ export const images = {
   logo3: require("../pngs/logo3.png"),
   logo4: require("../pngs/logo4.png"),
   bars: require("../pngs/bars.png"),
+  fire: require("../pngs/fire.png"),
+  network: require("../pngs/network.png"),
 };
