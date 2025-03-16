@@ -23,6 +23,7 @@ import HotStreakBettors from "../../screens/Main/HotStreakBettors";
 import PopularBettors from "../../screens/Main/PopularBettors";
 import UserProfile from "../../screens/Main/UserProfile";
 import UserHistory from "../../screens/Main/UserHistory";
+import NetRecord from "../../screens/Main/Net Record";
 
 export type AppStackParamList = {
   Login: undefined;
@@ -48,6 +49,7 @@ export type AppStackParamList = {
   PopularBettors: undefined;
   UserProfile: undefined;
   UserHistory: undefined;
+  NetRecord: undefined;
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -91,6 +93,7 @@ const AppStack = () => {
       <Stack.Screen name={"HotStreakBettors"} component={HotStreakBettors} />
       <Stack.Screen name={"PopularBettors"} component={PopularBettors} />
       <Stack.Screen name={"UserHistory"} component={UserHistory} />
+      <Stack.Screen name={"NetRecord"} component={NetRecord} />
     </Stack.Navigator>
   );
 };

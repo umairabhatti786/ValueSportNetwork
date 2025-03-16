@@ -1,12 +1,11 @@
 import {
-  FlatList,
   Image,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { appStyles } from "../../../utils/GlobalStyles";
 import sizeHelper from "../../../utils/Helpers";
 import { theme } from "../../../utils/Themes";
@@ -14,7 +13,6 @@ import { images } from "../../../assets/pngs";
 import CustomText from "../../../components/Text";
 import { fonts } from "../../../utils/Themes/fonts";
 import ScreenLayout from "../../../components/ScreenLayout";
-import User from "../../../components/User";
 
 const UserHistory = ({ navigation }: any) => {
   const Header = () => {
@@ -49,9 +47,10 @@ const UserHistory = ({ navigation }: any) => {
       </View>
     );
   };
-  const DetailContaner = ({ day, ROI }: any) => {
+  const DetailContaner = ({ day, ROI, onPress }: any) => {
     return (
-      <View
+      <TouchableOpacity
+        onPress={onPress}
         style={{
           ...styles.btn_container,
           alignItems: "center",
@@ -101,7 +100,7 @@ const UserHistory = ({ navigation }: any) => {
             />
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   const BetsContaner = ({ title, code, Bet }: any) => {
@@ -370,7 +369,11 @@ const UserHistory = ({ navigation }: any) => {
         {/* today,yesterday */}
         <View style={appStyles.rowjustify}>
           <DetailContaner day={"Today"} ROI={"18%"} />
-          <DetailContaner day={"Yesterday"} ROI={"39.1%"} />
+          <DetailContaner
+            day={"Yesterday"}
+            ROI={"39.1%"}
+            onPress={() => navigation.navigate("NetRecord")}
+          />
           <DetailContaner day={"Last 7 Days"} ROI={"56.9%"} />
         </View>
         {/* betsContaner */}

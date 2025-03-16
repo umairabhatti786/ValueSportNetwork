@@ -8,10 +8,10 @@ import { theme } from "../../utils/Themes";
 import CustomButton from "../Button";
 import { PlayerType } from "../../utils/Types";
 
-const Player = ({ pic, name, time, record,onPress }: PlayerType) => {
+const Player = ({ pic, name, time, record, onPress }: PlayerType) => {
   return (
     <TouchableOpacity
-    onPress={onPress}
+      onPress={onPress}
       style={{
         ...appStyles.row,
         justifyContent: "space-between",
@@ -29,7 +29,7 @@ const Player = ({ pic, name, time, record,onPress }: PlayerType) => {
             height: sizeHelper.calWp(60),
             width: sizeHelper.calWp(60),
             marginRight: sizeHelper.calWp(20),
-            borderRadius: 50,
+            borderRadius: sizeHelper.calHp(50),
           }}
         />
         <View>
