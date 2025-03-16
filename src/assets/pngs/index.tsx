@@ -113,7 +113,13 @@ export const images = {
   logo3: require("../pngs/logo3.png"),
   logo4: require("../pngs/logo4.png"),
   leakers: require("../pngs/leakers.png"),
+  modalLogo: require("../pngs/modalLogo.png"),
 
   graphLine: require("../pngs/graphLine.png"),
   qrCode: require("../pngs/qrCode.png"),
+  plusGray: require("../pngs/plusGray.png"),
+  link: require("../pngs/link.png"),
+  msg: require("../pngs/msg.png"),
+  twitter: require("../pngs/twitter.png"),
+  whatsapp: require("../pngs/whatsapp.png"),
 };
