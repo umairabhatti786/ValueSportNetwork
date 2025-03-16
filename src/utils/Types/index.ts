@@ -93,4 +93,5 @@ export type PlayerType ={
   name:string,
   time:string,
   record?:string,
+  onPress?:()=>void
 }

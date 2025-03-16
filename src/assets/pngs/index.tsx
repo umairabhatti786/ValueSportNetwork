@@ -51,6 +51,10 @@ export const images = {
   left_arrow: require("../pngs/left_arrow.png"),
   left_arrow_black: require("../pngs/leftArrowBlack.png"),
   up_arrow: require("../pngs/up_arrow.png"),
+  scan_code: require("../pngs/scan_code.png"),
+
+  share: require("../pngs/share.png"),
+  
 
   tracks: require("../pngs/tracks.png"),
   back: require("../pngs/back.png"),

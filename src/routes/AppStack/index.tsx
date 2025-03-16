@@ -21,6 +21,7 @@ import ExploreUsers from "../../screens/Main/ExploreUsers";
 import VerifiedExperts from "../../screens/Main/VerifiedExperts";
 import HotStreakBettors from "../../screens/Main/HotStreakBettors";
 import PopularBettors from "../../screens/Main/PopularBettors";
+import UserProfile from "../../screens/Main/UserProfile";
 
 export type AppStackParamList = {
   Login: undefined;
@@ -44,6 +45,7 @@ export type AppStackParamList = {
   VerifiedExperts: undefined;
   HotStreakBettors: undefined;
   PopularBettors: undefined;
+  UserProfile:undefined
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -74,6 +76,7 @@ const AppStack = () => {
       <Stack.Screen name={"MyAccounts"} component={MyAccounts} />
       <Stack.Screen name={"BottomTab"} component={BottomTab} />
       <Stack.Screen name={"BettingTools"} component={BettingTools} />
+      <Stack.Screen name={"UserProfile"} component={UserProfile} />
 
       <Stack.Screen name={"ArbCalculator"} component={ArbCalculator} />
       <Stack.Screen name={"BetCalculator"} component={BetCalculator} />

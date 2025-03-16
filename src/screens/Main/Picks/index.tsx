@@ -177,7 +177,10 @@ const picks = ({ navigation }: any) => {
                 fontFam={fonts.Inter_Bold}
               />
             </TouchableOpacity>
-            <Image
+            <TouchableOpacity
+            onPress={()=>navigation.navigate("Betslip")}
+            >
+               <Image
               style={{
                 width: sizeHelper.calWp(40),
                 height: sizeHelper.calWp(40),
@@ -185,6 +188,9 @@ const picks = ({ navigation }: any) => {
               source={images.filter}
               resizeMode="contain"
             />
+
+            </TouchableOpacity>
+           
           </View>
           {/* Tabs */}
           <View
@@ -357,7 +363,9 @@ const picks = ({ navigation }: any) => {
               {SpreadPlayersData.map((item, index) => {
                 return (
                   <View style={{ gap: sizeHelper.calHp(20) }}>
-                    <Player pic={item.pic} name={item.name} time={item.time} />
+                    <Player 
+                    onPress={()=>navigation.navigate("UserProfile")}
+                    pic={item.pic} name={item.name} time={item.time} />
                   </View>
                 );
               })}
