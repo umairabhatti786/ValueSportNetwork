@@ -2,11 +2,10 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import ScreenLayout from "../../../components/ScreenLayout";
 import sizeHelper from "../../../utils/Helpers";
 import { theme } from "../../../utils/Themes";
@@ -14,7 +13,6 @@ import CustomText from "../../../components/Text";
 import { fonts } from "../../../utils/Themes/fonts";
 import { appStyles } from "../../../utils/GlobalStyles";
 import { images } from "../../../assets/pngs";
-import Player from "../../../components/Player";
 
 const NetRecord = ({ navigation }: any) => {
   const Header = () => {

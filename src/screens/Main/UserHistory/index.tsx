@@ -103,9 +103,10 @@ const UserHistory = ({ navigation }: any) => {
       </TouchableOpacity>
     );
   };
-  const BetsContaner = ({ title, code, Bet }: any) => {
+  const BetsContaner = ({ title, code, Bet, onPress }: any) => {
     return (
-      <View
+      <TouchableOpacity
+        onPress={onPress}
         style={{
           ...styles.btn_container2,
           alignItems: "center",
@@ -132,7 +133,7 @@ const UserHistory = ({ navigation }: any) => {
           <CustomText text={code} color={theme.colors.gray500} size={20} />
           <CustomText text={Bet} color={theme.colors.blue100} size={16} />
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   const FavoriteBetsContaner = () => {
@@ -378,7 +379,12 @@ const UserHistory = ({ navigation }: any) => {
         </View>
         {/* betsContaner */}
         <View style={appStyles.rowjustify}>
-          <BetsContaner title={"MLB"} code={"407-344-10"} Bet={"15.89u"} />
+          <BetsContaner
+            title={"MLB"}
+            code={"407-344-10"}
+            Bet={"15.89u"}
+            onPress={() => navigation.navigate("MLB_Record")}
+          />
           <BetsContaner title={"UFC"} code={"502-433-29"} Bet={"3.45u"} />
           <BetsContaner title={"BOXING"} code={"41-32-60"} Bet={"13.77u"} />
         </View>

@@ -23,7 +23,8 @@ import HotStreakBettors from "../../screens/Main/HotStreakBettors";
 import PopularBettors from "../../screens/Main/PopularBettors";
 import UserProfile from "../../screens/Main/UserProfile";
 import UserHistory from "../../screens/Main/UserHistory";
-import NetRecord from "../../screens/Main/Net Record";
+import NetRecord from "../../screens/Main/NetRecord";
+import MLB_Record from "../../screens/Main/MLB_Record";
 
 export type AppStackParamList = {
   Login: undefined;
@@ -50,6 +51,7 @@ export type AppStackParamList = {
   UserProfile: undefined;
   UserHistory: undefined;
   NetRecord: undefined;
+  MLB_Record: undefined;
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -94,6 +96,7 @@ const AppStack = () => {
       <Stack.Screen name={"PopularBettors"} component={PopularBettors} />
       <Stack.Screen name={"UserHistory"} component={UserHistory} />
       <Stack.Screen name={"NetRecord"} component={NetRecord} />
+      <Stack.Screen name={"MLB_Record"} component={MLB_Record} />
     </Stack.Navigator>
   );
 };
