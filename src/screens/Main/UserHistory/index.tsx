@@ -283,7 +283,8 @@ const UserHistory = ({ navigation }: any) => {
     return (
       <>
         <View style={{ ...appStyles.rowjustify }}>
-          <View
+          <TouchableOpacity
+            onPress={() => navigation.navigate("CLV")}
             style={{
               ...styles.btn_container,
               paddingHorizontal: sizeHelper.calWp(30),
@@ -318,7 +319,7 @@ const UserHistory = ({ navigation }: any) => {
                 <CustomText text={"days"} color={"#FF8C00"} size={18} />
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
 
           {/* 2nd */}
           <View

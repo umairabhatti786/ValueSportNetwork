@@ -29,7 +29,6 @@ const MLB_Record = ({ navigation }: any) => {
       heartCount: number;
     }[];
   }
-
   const ScorePoints: React.FC<ScorePointsProps> = ({
     playerName,
     playerImage,

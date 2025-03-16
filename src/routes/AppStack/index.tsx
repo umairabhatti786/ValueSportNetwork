@@ -25,6 +25,7 @@ import UserProfile from "../../screens/Main/UserProfile";
 import UserHistory from "../../screens/Main/UserHistory";
 import NetRecord from "../../screens/Main/NetRecord";
 import MLB_Record from "../../screens/Main/MLB_Record";
+import CLV from "../../screens/Main/CLV";
 
 export type AppStackParamList = {
   Login: undefined;
@@ -52,6 +53,7 @@ export type AppStackParamList = {
   UserHistory: undefined;
   NetRecord: undefined;
   MLB_Record: undefined;
+  CLV: undefined;
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -97,6 +99,7 @@ const AppStack = () => {
       <Stack.Screen name={"UserHistory"} component={UserHistory} />
       <Stack.Screen name={"NetRecord"} component={NetRecord} />
       <Stack.Screen name={"MLB_Record"} component={MLB_Record} />
+      <Stack.Screen name={"CLV"} component={CLV} />
     </Stack.Navigator>
   );
 };
