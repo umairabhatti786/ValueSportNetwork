@@ -420,7 +420,10 @@ const UserProfile = ({ navigation }: any) => {
               size={15}
             />
           </View>
-          <View style={{ alignItems: "center" }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Following")}
+            style={{ alignItems: "center", padding: 20 }}
+          >
             <CustomText
               text={"100"}
               color={theme.colors.black}
@@ -433,7 +436,7 @@ const UserProfile = ({ navigation }: any) => {
               numberOfLines={2}
               size={15}
             />
-          </View>
+          </TouchableOpacity>
         </View>
 
         <CustomText

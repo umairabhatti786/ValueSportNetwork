@@ -66,5 +66,3 @@ const Player = ({ pic, name, time, record, onPress }: PlayerType) => {
 };
 
 export default Player;
-
-const styles = StyleSheet.create({});
