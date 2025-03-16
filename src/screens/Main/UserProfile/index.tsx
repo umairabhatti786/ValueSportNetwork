@@ -9,10 +9,13 @@ import { fonts } from "../../../utils/Themes/fonts";
 import CustomButton from "../../../components/Button";
 import SetUpProgress from "../../../components/SetUpProgress";
 import { useState } from "react";
+import Modal from "react-native-modal";
 
 const UserProfile = ({ navigation }: any) => {
   const Tabs = ["Spread", "Total", "Moneyline"];
   const [activeTab, setActiveTab] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+
   const [selectedGame, setSelectedGame] = useState(0);
   const LeaguesData = [
     {
@@ -449,9 +452,204 @@ const UserProfile = ({ navigation }: any) => {
       </View>
     );
   };
+  const Player = () => {
+    return (
+      <TouchableOpacity
+        //onPress={onPress}
+        style={{
+          ...appStyles.row,
+          justifyContent: "space-between",
+        }}
+      >
+        <View
+          style={{
+            ...appStyles.row,
+          }}
+        >
+          <Image
+            resizeMode="contain"
+            source={images.player1}
+            style={{
+              height: sizeHelper.calWp(60),
+              width: sizeHelper.calWp(60),
+              marginRight: sizeHelper.calWp(20),
+              borderRadius: sizeHelper.calHp(50),
+            }}
+          />
+          <View>
+            <View style={{ ...appStyles.row }}>
+              <CustomText text={"Marc Alex"} size={20} />
+              <Image
+                resizeMode="contain"
+                source={images.check}
+                style={{
+                  height: sizeHelper.calHp(20),
+                  width: sizeHelper.calWp(20),
+                  marginLeft: sizeHelper.calWp(10),
+                  borderRadius: 50,
+                }}
+              />
+            </View>
+            <CustomText
+              text={"1hr ago |  NBA Record: +179.43u"}
+              size={16}
+              color={theme.colors.gray500}
+            />
+          </View>
+        </View>
+        <CustomButton
+          text="Follow"
+          bgColor={theme.colors.secondry}
+          width={100}
+          height={50}
+          borderRadius={15}
+          size={16}
+        />
+      </TouchableOpacity>
+    );
+  };
+  const LibraryModalScreen = () => {
+    return (
+      <View>
+        <Modal
+          isVisible={modalVisible}
+          animationIn="slideInLeft"
+          animationOut="slideOutLeft"
+          onBackdropPress={() => setModalVisible(false)} // Allows closing when tapping outside
+          style={{ margin: 0 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modal}>
+              {/* head */}
+              <View
+                style={{
+                  ...appStyles.row,
+                  justifyContent: "space-between",
+                }}
+              >
+                <View
+                  style={{
+                    ...appStyles.row,
+                  }}
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={images.player1}
+                    style={{
+                      height: sizeHelper.calWp(60),
+                      width: sizeHelper.calWp(60),
+                      marginRight: sizeHelper.calWp(20),
+                      borderRadius: sizeHelper.calHp(50),
+                    }}
+                  />
+                  <View>
+                    <View style={{ ...appStyles.row }}>
+                      <CustomText text={"Marc Alex"} size={20} />
+                      <Image
+                        resizeMode="contain"
+                        source={images.check}
+                        style={{
+                          height: sizeHelper.calHp(20),
+                          width: sizeHelper.calWp(20),
+                          marginLeft: sizeHelper.calWp(10),
+                          borderRadius: 50,
+                        }}
+                      />
+                    </View>
+                    <CustomText
+                      text={"1hr ago |  NBA Record: +179.43u"}
+                      size={16}
+                      color={theme.colors.gray500}
+                    />
+                  </View>
+                </View>
+                <Image
+                  source={images.share}
+                  resizeMode="contain"
+                  style={{
+                    height: sizeHelper.calHp(60),
+                    width: sizeHelper.calWp(60),
+                  }}
+                />
+              </View>
+              {/* qr code */}
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: sizeHelper.calHp(55),
+                }}
+              >
+                <Image
+                  source={images.qrCode}
+                  resizeMode="contain"
+                  style={{
+                    height: sizeHelper.calHp(340),
+                    width: sizeHelper.calWp(300),
+                    alignSelf: "center",
+                  }}
+                />
+              </View>
+              <View style={{ ...appStyles.rowjustify }}>
+                <View
+                  style={{
+                    ...appStyles.row,
+                    gap: sizeHelper.calWp(30),
+                    borderWidth: sizeHelper.calWp(0.6),
+                    borderRadius: sizeHelper.calWp(30),
+                    paddingVertical: sizeHelper.calHp(16),
+                    paddingHorizontal: sizeHelper.calWp(40),
+                  }}
+                >
+                  <Image
+                    source={images.fire2}
+                    resizeMode="contain"
+                    style={{
+                      height: sizeHelper.calHp(60),
+                      width: sizeHelper.calWp(60),
+                      alignSelf: "center",
+                    }}
+                  />
+                  <View>
+                    <CustomText text={"0 DAYS"} size={22} />
+                    <CustomText text={"Hot Streak"} size={18} />
+                  </View>
+                </View>
+                <View
+                  style={{
+                    ...appStyles.row,
+                    gap: sizeHelper.calWp(30),
+                    borderWidth: sizeHelper.calWp(0.6),
+                    borderRadius: sizeHelper.calWp(30),
+                    paddingVertical: sizeHelper.calHp(16),
+                    paddingHorizontal: sizeHelper.calWp(40),
+                  }}
+                >
+                  <Image
+                    source={images.fire2}
+                    resizeMode="contain"
+                    style={{
+                      height: sizeHelper.calHp(60),
+                      width: sizeHelper.calWp(60),
+                      alignSelf: "center",
+                    }}
+                  />
+                  <View>
+                    <CustomText text={"0 DAYS"} size={22} />
+                    <CustomText text={"Hot Streak"} size={18} />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      </View>
+    );
+  };
   return (
     <>
       <ScreenLayout style={styles.main}>
+        {/* header */}
         <View style={appStyles.rowjustify}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
@@ -474,7 +672,10 @@ const UserProfile = ({ navigation }: any) => {
             />
           </TouchableOpacity>
           <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
-            <TouchableOpacity style={styles.header_box}>
+            <TouchableOpacity
+              style={styles.header_box}
+              onPress={() => setModalVisible(true)}
+            >
               <Image style={styles.img} source={images.share} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.header_box}>
@@ -485,9 +686,7 @@ const UserProfile = ({ navigation }: any) => {
             </TouchableOpacity>
           </View>
         </View>
-
         <Header />
-
         {/* follow and my account btns */}
         <View style={{ ...appStyles.rowjustify, gap: sizeHelper.calWp(20) }}>
           <CustomButton
@@ -503,7 +702,6 @@ const UserProfile = ({ navigation }: any) => {
             onPress={() => navigation.navigate("UserHistory")}
           />
         </View>
-
         {/* tabs */}
         <View style={{ ...appStyles.rowjustify, gap: sizeHelper.calWp(20) }}>
           <View
@@ -544,7 +742,6 @@ const UserProfile = ({ navigation }: any) => {
             <Image style={styles.img} source={images.filter} />
           </TouchableOpacity>
         </View>
-
         {/*  today bets */}
         <View style={{ gap: sizeHelper.calHp(15) }}>
           <View
@@ -663,10 +860,8 @@ const UserProfile = ({ navigation }: any) => {
             );
           })}
         </View>
-
         {/* <TrackCard /> */}
         {/* <SportsContainer /> */}
-
         {/* Marc’s Stats */}
         <View>
           <View style={{ ...appStyles.rowjustify }}>
@@ -782,57 +977,144 @@ const UserProfile = ({ navigation }: any) => {
                 </View>
               );
             })}
-            {/* <View style={{ ...appStyles.rowjustify }}>
-              <View style={{ ...appStyles.rowjustify }}>
-                <View style={{ ...appStyles.row, width: "50%" }}>
+          </View>
+        </View>
+        {/* ....modal...... */}
+        <View>
+          <Modal
+            isVisible={modalVisible}
+            animationIn="slideInLeft"
+            animationOut="slideOutLeft"
+            onBackdropPress={() => setModalVisible(false)} // Allows closing when tapping outside
+            style={{ margin: 0 }}
+          >
+            <View style={styles.modalOverlay}>
+              <View style={styles.modal}>
+                {/* head */}
+                <View
+                  style={{
+                    ...appStyles.row,
+                    justifyContent: "space-between",
+                  }}
+                >
                   <View
                     style={{
-                      height: sizeHelper.calHp(80),
-                      width: sizeHelper.calWp(80),
-                      backgroundColor: "#F1F1F1",
-                      borderRadius: sizeHelper.calWp(15),
-                      alignItems: "center",
-                      justifyContent: "center",
+                      ...appStyles.row,
                     }}
                   >
                     <Image
-                      source={images.ballLogo1}
+                      resizeMode="contain"
+                      source={images.player1}
+                      style={{
+                        height: sizeHelper.calWp(60),
+                        width: sizeHelper.calWp(60),
+                        marginRight: sizeHelper.calWp(20),
+                        borderRadius: sizeHelper.calHp(50),
+                      }}
+                    />
+                    <View>
+                      <View style={{ ...appStyles.row }}>
+                        <CustomText text={"Marc Alex"} size={20} />
+                        <Image
+                          resizeMode="contain"
+                          source={images.check}
+                          style={{
+                            height: sizeHelper.calHp(20),
+                            width: sizeHelper.calWp(20),
+                            marginLeft: sizeHelper.calWp(10),
+                            borderRadius: 50,
+                          }}
+                        />
+                      </View>
+                      <CustomText
+                        text={"1hr ago |  NBA Record: +179.43u"}
+                        size={16}
+                        color={theme.colors.gray500}
+                      />
+                    </View>
+                  </View>
+                  <TouchableOpacity onPress={() => setModalVisible(false)}>
+                    <Image
+                      source={images.share}
                       resizeMode="contain"
                       style={{
                         height: sizeHelper.calHp(60),
                         width: sizeHelper.calWp(60),
                       }}
                     />
-                  </View>
-                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-                    <CustomText text={"MLB"} size={20} />
-                    <CustomText
-                      text={"+15.3 units"}
-                      size={20}
-                      color={theme.colors.secondry}
+                  </TouchableOpacity>
+                </View>
+                {/* qr code */}
+                <View
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: sizeHelper.calHp(55),
+                  }}
+                >
+                  <Image
+                    source={images.qrCode}
+                    resizeMode="contain"
+                    style={{
+                      height: sizeHelper.calHp(340),
+                      width: sizeHelper.calWp(300),
+                      alignSelf: "center",
+                    }}
+                  />
+                </View>
+                <View style={{ ...appStyles.rowjustify }}>
+                  <View
+                    style={{
+                      ...appStyles.row,
+                      gap: sizeHelper.calWp(30),
+                      borderWidth: sizeHelper.calWp(0.6),
+                      borderRadius: sizeHelper.calWp(30),
+                      paddingVertical: sizeHelper.calHp(16),
+                      paddingHorizontal: sizeHelper.calWp(40),
+                    }}
+                  >
+                    <Image
+                      source={images.fire2}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calHp(60),
+                        width: sizeHelper.calWp(60),
+                        alignSelf: "center",
+                      }}
                     />
+                    <View>
+                      <CustomText text={"0 DAYS"} size={22} />
+                      <CustomText text={"Hot Streak"} size={18} />
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      ...appStyles.row,
+                      gap: sizeHelper.calWp(30),
+                      borderWidth: sizeHelper.calWp(0.6),
+                      borderRadius: sizeHelper.calWp(30),
+                      paddingVertical: sizeHelper.calHp(16),
+                      paddingHorizontal: sizeHelper.calWp(40),
+                    }}
+                  >
+                    <Image
+                      source={images.fire2}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calHp(60),
+                        width: sizeHelper.calWp(60),
+                        alignSelf: "center",
+                      }}
+                    />
+                    <View>
+                      <CustomText text={"0 DAYS"} size={22} />
+                      <CustomText text={"Hot Streak"} size={18} />
+                    </View>
                   </View>
                 </View>
-
-                <Image
-                  source={images.graphLine}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(50),
-                    width: sizeHelper.calWp(60),
-                  }}
-                />
               </View>
-              <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-                <CustomText text={"MLB"} size={20} />
-                <CustomText
-                  text={"+15.3 units"}
-                  size={20}
-                  color={theme.colors.secondry}
-                />
-              </View>
-            </View> */}
-          </View>
+            </View>
+          </Modal>
         </View>
       </ScreenLayout>
     </>
@@ -907,5 +1189,30 @@ const styles = StyleSheet.create({
     height: sizeHelper.calWp(65),
     borderRadius: sizeHelper.calWp(65),
     borderColor: theme.colors.white,
+  },
+  // .......................
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "center", // Center modal instead of `flex-end`
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modal: {
+    width: "90%",
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 20,
+    justifyContent: "space-between",
+    margin: sizeHelper.calWp(40),
+  },
+  modalContent: {
+    backgroundColor: "white",
+    // padding: 20,
+    // borderRadius: 20,
+    // shadowColor: "#000",
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.3,
+    // shadowRadius: 4,
+    // elevation: 5,
   },
 });

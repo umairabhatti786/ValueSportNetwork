@@ -95,6 +95,7 @@ export const images = {
 
   bars: require("../pngs/bars.png"),
   fire: require("../pngs/fire.png"),
+  fire2: require("../pngs/fire2.png"),
   network: require("../pngs/network.png"),
   // players
   player1: require("../pngs/player_1.png"),
@@ -114,4 +115,5 @@ export const images = {
   leakers: require("../pngs/leakers.png"),
 
   graphLine: require("../pngs/graphLine.png"),
+  qrCode: require("../pngs/qrCode.png"),
 };

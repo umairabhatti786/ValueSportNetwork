@@ -21,6 +21,7 @@
     "react-native-confirmation-code-field": "^7.4.0",
     "react-native-gesture-handler": "^2.23.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-modal": "^14.0.0-rc.1",
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "^4.6.0"
   },
