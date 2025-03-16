@@ -34,6 +34,7 @@ export const images = {
   notification: require("../pngs/notification.png"),
   leagues: require("../pngs/leagues.png"),
   trophy: require("../pngs/trophy.png"),
+  trophy2: require("../pngs/trophy2.png"),
   next: require("../pngs/next.png"),
   search: require("../pngs/search.png"),
   plus: require("../pngs/plus.png"),
@@ -54,7 +55,6 @@ export const images = {
   scan_code: require("../pngs/scan_code.png"),
 
   share: require("../pngs/share.png"),
-  
 
   tracks: require("../pngs/tracks.png"),
   back: require("../pngs/back.png"),
@@ -102,4 +102,11 @@ export const images = {
   player3: require("../pngs/player3.png"),
   player4: require("../pngs/player4.png"),
   player5: require("../pngs/player5.png"),
+
+  //logos
+  ballLogo1: require("../pngs/ballLogo1.png"),
+  ballLogo2: require("../pngs/ballLogo2.png"),
+  ballLogo3: require("../pngs/ballLogo3.png"),
+
+  graphLine: require("../pngs/graphLine.png"),
 };

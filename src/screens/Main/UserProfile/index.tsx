@@ -1,4 +1,4 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ScreenLayout from "../../../components/ScreenLayout";
 import sizeHelper from "../../../utils/Helpers";
 import { appStyles } from "../../../utils/GlobalStyles";
@@ -14,7 +14,29 @@ const UserProfile = ({ navigation }: any) => {
   const Tabs = ["Spread", "Total", "Moneyline"];
   const [activeTab, setActiveTab] = useState(0);
   const [selectedGame, setSelectedGame] = useState(0);
-
+  const LeaguesData = [
+    {
+      name: "MLB",
+      logo: images.ballLogo1,
+      units: "+15.3 units",
+      code: "407-344-10",
+      percentage: "3.44% ROI",
+    },
+    {
+      name: "NBA",
+      logo: images.ballLogo2,
+      units: "+15.3 units",
+      code: "407-344-10",
+      percentage: "3.44% ROI",
+    },
+    {
+      name: "EPL",
+      logo: images.ballLogo3,
+      units: "+15.3 units",
+      code: "407-344-10",
+      percentage: "3.44% ROI",
+    },
+  ];
   const DetailContaner = ({ title, onPress }: any) => {
     return (
       <TouchableOpacity
@@ -462,6 +484,8 @@ const UserProfile = ({ navigation }: any) => {
         </View>
 
         <Header />
+
+        {/* follow and my account btns */}
         <View style={{ ...appStyles.rowjustify, gap: sizeHelper.calWp(20) }}>
           <CustomButton
             width={"48%"}
@@ -476,6 +500,7 @@ const UserProfile = ({ navigation }: any) => {
           />
         </View>
 
+        {/* tabs */}
         <View style={{ ...appStyles.rowjustify, gap: sizeHelper.calWp(20) }}>
           <View
             style={{
@@ -516,6 +541,7 @@ const UserProfile = ({ navigation }: any) => {
           </TouchableOpacity>
         </View>
 
+        {/*  today bets */}
         <View style={{ gap: sizeHelper.calHp(15) }}>
           <View
             style={{
@@ -557,87 +583,253 @@ const UserProfile = ({ navigation }: any) => {
 
           {[1, 2, 3].map((i) => {
             return (
-                <View style={appStyles.rowjustify} >
+              <View style={appStyles.rowjustify}>
+                <View style={{ ...appStyles.row }}>
+                  <Image source={images.player1} style={styles.imgCircle} />
+                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                    <View
+                      style={{ ...appStyles.row, gap: sizeHelper.calWp(5) }}
+                    >
+                      <CustomText
+                        text={"Alex.D  To Score 10+ Points |"}
+                        size={17}
+                      />
+                      <CustomText
+                        text={"-100"}
+                        size={16}
+                        color={theme.colors.gray500}
+                      />
+                      <CustomText
+                        text={"| 2.5u"}
+                        size={16}
+                        color={theme.colors.gray500}
+                      />
+                    </View>
+                    <View>
+                      <CustomText
+                        text={"MEM @NYK  |  1/28  1:30am"}
+                        size={14}
+                        color={theme.colors.gray500}
+                      />
+                      <CustomText
+                        text={"Dame Revenge Game Ladder up to 40"}
+                        size={14}
+                        color={theme.colors.gray500}
+                      />
+                    </View>
+                  </View>
+                </View>
 
-<View style={{ ...appStyles.row }}>
-                <Image source={images.player1} style={styles.imgCircle} />
-                <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-                  <View style={{ ...appStyles.row, gap: sizeHelper.calWp(5) }}>
-                    <CustomText
-                      text={"Alex.D  To Score 10+ Points |"}
-                      size={17}
+                {/* icons */}
+                <View style={{ ...appStyles.row, gap: sizeHelper.calWp(25) }}>
+                  {/* plus icon */}
+                  <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
+                    <Image
+                      source={images.plusBox}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calWp(25),
+                        width: sizeHelper.calWp(25),
+                      }}
                     />
                     <CustomText
-                      text={"-100"}
-                      size={16}
-                      color={theme.colors.gray500}
-                    />
-                    <CustomText
-                      text={"| 2.5u"}
-                      size={16}
-                      color={theme.colors.gray500}
+                      text={"20"}
+                      size={20}
+                      color={theme.colors.gray700}
                     />
                   </View>
-                  <View >
-                    <CustomText
-                      text={"MEM @NYK  |  1/28  1:30am"}
-                      size={14}
-                      color={theme.colors.gray500}
+                  {/* heart icon */}
+                  <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
+                    <Image
+                      source={images.heart}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calWp(25),
+                        width: sizeHelper.calWp(25),
+                      }}
                     />
-                      <CustomText
-                              text={"Dame Revenge Game Ladder up to 40"}
-                              size={14}
-                              color={theme.colors.gray500}
-                            />
+                    <CustomText
+                      text={"10"}
+                      size={20}
+                      color={theme.colors.gray700}
+                    />
                   </View>
                 </View>
               </View>
-
-                 {/* icons */}
-            <View style={{ ...appStyles.row, gap: sizeHelper.calWp(25) }}>
-              {/* plus icon */}
-              <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
-                <Image
-                  source={images.plusBox}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calWp(25),
-                    width: sizeHelper.calWp(25),
-                  }}
-                />
-                <CustomText
-                  text={"20"}
-                  size={20}
-                  color={theme.colors.gray700}
-                />
-              </View>
-              {/* heart icon */}
-              <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
-                <Image
-                  source={images.heart}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calWp(25),
-                    width: sizeHelper.calWp(25),
-                  }}
-                />
-                <CustomText
-                  text={"10"}
-                  size={20}
-                  color={theme.colors.gray700}
-                />
-              </View>
-            </View>
-
-
-                    </View>
-             
             );
           })}
         </View>
 
         {/* <TrackCard /> */}
         {/* <SportsContainer /> */}
+
+        {/* Marc’s Stats */}
+        <View>
+          <View style={{ ...appStyles.rowjustify }}>
+            <CustomText text={"Marc’s Stats"} size={22} fontWeight="700" />
+            <TouchableOpacity style={styles.btn2}>
+              <CustomText
+                text={"View All Bet History"}
+                size={16}
+                color="#A5A5A5"
+              />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              borderWidth: sizeHelper.calWp(0.6),
+              borderColor: "#B6B6B6",
+              borderRadius: sizeHelper.calWp(15),
+              marginTop: sizeHelper.calHp(20),
+              padding: sizeHelper.calWp(20),
+            }}
+          >
+            <View
+              style={{
+                ...appStyles.rowjustify,
+                marginBottom: sizeHelper.calHp(15),
+              }}
+            >
+              <View style={{ ...appStyles.row }}>
+                <Image
+                  source={images.trophy2}
+                  resizeMode="contain"
+                  style={{
+                    height: sizeHelper.calHp(60),
+                    width: sizeHelper.calWp(60),
+                  }}
+                />
+                <View style={{ marginLeft: sizeHelper.calWp(40) }}>
+                  <CustomText text={"Top Leagues"} size={22} />
+                  <CustomText
+                    text={"Last 30: 14-12-0"}
+                    size={18}
+                    color="#8E8E8E"
+                  />
+                </View>
+              </View>
+              <Image
+                source={images.filter}
+                resizeMode="contain"
+                style={{
+                  height: sizeHelper.calHp(60),
+                  width: sizeHelper.calWp(60),
+                }}
+              />
+            </View>
+
+            {LeaguesData.map((item, index) => {
+              return (
+                <View
+                  key={index}
+                  style={{
+                    ...appStyles.rowjustify,
+                    marginTop: sizeHelper.calHp(20),
+                  }}
+                >
+                  <View style={{ ...appStyles.rowjustify }}>
+                    <View style={{ ...appStyles.row, width: "50%" }}>
+                      <View
+                        style={{
+                          height: sizeHelper.calHp(80),
+                          width: sizeHelper.calWp(80),
+                          backgroundColor: "#F1F1F1",
+                          borderRadius: sizeHelper.calWp(15),
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image
+                          source={item.logo}
+                          resizeMode="contain"
+                          style={{
+                            height: sizeHelper.calHp(60),
+                            width: sizeHelper.calWp(60),
+                          }}
+                        />
+                      </View>
+                      <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                        <CustomText text={item.name} size={20} />
+                        <CustomText
+                          text={item.units}
+                          size={20}
+                          color={theme.colors.secondry}
+                        />
+                      </View>
+                    </View>
+
+                    <Image
+                      source={images.graphLine}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calHp(50),
+                        width: sizeHelper.calWp(60),
+                      }}
+                    />
+                  </View>
+                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                    <CustomText text={item.code} size={20} />
+                    <CustomText
+                      text={item.percentage}
+                      size={20}
+                      color={theme.colors.secondry}
+                    />
+                  </View>
+                </View>
+              );
+            })}
+            {/* <View style={{ ...appStyles.rowjustify }}>
+              <View style={{ ...appStyles.rowjustify }}>
+                <View style={{ ...appStyles.row, width: "50%" }}>
+                  <View
+                    style={{
+                      height: sizeHelper.calHp(80),
+                      width: sizeHelper.calWp(80),
+                      backgroundColor: "#F1F1F1",
+                      borderRadius: sizeHelper.calWp(15),
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      source={images.ballLogo1}
+                      resizeMode="contain"
+                      style={{
+                        height: sizeHelper.calHp(60),
+                        width: sizeHelper.calWp(60),
+                      }}
+                    />
+                  </View>
+                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                    <CustomText text={"MLB"} size={20} />
+                    <CustomText
+                      text={"+15.3 units"}
+                      size={20}
+                      color={theme.colors.secondry}
+                    />
+                  </View>
+                </View>
+
+                <Image
+                  source={images.graphLine}
+                  resizeMode="contain"
+                  style={{
+                    height: sizeHelper.calHp(50),
+                    width: sizeHelper.calWp(60),
+                  }}
+                />
+              </View>
+              <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                <CustomText text={"MLB"} size={20} />
+                <CustomText
+                  text={"+15.3 units"}
+                  size={20}
+                  color={theme.colors.secondry}
+                />
+              </View>
+            </View> */}
+          </View>
+        </View>
       </ScreenLayout>
     </>
   );
@@ -670,6 +862,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: sizeHelper.calWp(17),
     paddingHorizontal: sizeHelper.calWp(20),
+    justifyContent: "center",
+  },
+  btn2: {
+    width: sizeHelper.calWp(200),
+    height: sizeHelper.calHp(40),
+    borderRadius: sizeHelper.calWp(10),
+    borderWidth: sizeHelper.calWp(1),
+    borderColor: theme.colors.gray700,
+    alignItems: "center",
     justifyContent: "center",
   },
   divider: {
