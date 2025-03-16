@@ -32,7 +32,7 @@ const picks = ({ navigation }: any) => {
     return (
       <View
         style={{
-          borderBottomWidth: 0.5,
+          borderBottomWidth: sizeHelper.calWp(0.6),
           borderBottomColor: theme.colors.gray500,
         }}
       >
@@ -64,7 +64,7 @@ const picks = ({ navigation }: any) => {
               >
                 <View style={{ ...appStyles.row }}>
                   <Image source={images.player1} style={styles.imgCircle} />
-                  <View style={{ marginLeft: 10 }}>
+                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                     <View style={{ ...appStyles.row }}>
                       <CustomText
                         text={"Alex.D To Score 10+ Points | "}
@@ -192,7 +192,7 @@ const picks = ({ navigation }: any) => {
               ...appStyles.row,
               paddingHorizontal: sizeHelper.calWp(40),
               gap: sizeHelper.calWp(30),
-              borderBottomWidth: 0.5,
+              borderBottomWidth: sizeHelper.calWp(0.6),
               borderBottomColor: theme.colors.gray500,
             }}
           >
@@ -263,10 +263,8 @@ const picks = ({ navigation }: any) => {
                   borderRadius: sizeHelper.calWp(5),
                   padding: sizeHelper.calWp(15),
                   justifyContent: "space-between",
-                  // shadowOffset: { width: 0, height: 0 },
                   shadowColor: theme.colors.black,
-                  shadowOpacity: 0.15, // Adjust for lighter shadow
-                  shadowRadius: 4, // Blurriness
+                  shadowRadius: sizeHelper.calWp(10),
                   elevation: 4, // Required for Android
                 }}
               >
@@ -280,8 +278,6 @@ const picks = ({ navigation }: any) => {
                       style={{
                         width: sizeHelper.calWp(40),
                         height: sizeHelper.calHp(35),
-                        // width: 22,
-                        // height: 21,
                       }}
                     />
 
@@ -436,10 +432,8 @@ const picks = ({ navigation }: any) => {
                   borderRadius: sizeHelper.calWp(5),
                   padding: sizeHelper.calWp(15),
                   justifyContent: "space-between",
-                  // shadowOffset: { width: 0, height: 0 },
                   shadowColor: theme.colors.black,
-                  shadowOpacity: 0.15, // Adjust for lighter shadow
-                  shadowRadius: 4, // Blurriness
+                  shadowRadius: sizeHelper.calHp(10),
                   elevation: 4, // Required for Android
                 }}
               >
@@ -526,11 +520,17 @@ const picks = ({ navigation }: any) => {
                       <Image source={images.player1} style={styles.imgCircle} />
                       <Image
                         source={images.player2}
-                        style={[styles.imgCircle, { marginLeft: -20 }]}
+                        style={[
+                          styles.imgCircle,
+                          { marginLeft: sizeHelper.calWp(-30) },
+                        ]}
                       />
                       <Image
                         source={images.player3}
-                        style={[styles.imgCircle, { marginLeft: -15 }]}
+                        style={[
+                          styles.imgCircle,
+                          { marginLeft: sizeHelper.calWp(-30) },
+                        ]}
                       />
                     </View>
                     <View>
@@ -568,7 +568,7 @@ const picks = ({ navigation }: any) => {
                             source={images.player1}
                             style={styles.imgCircle}
                           />
-                          <View style={{ marginLeft: 10 }}>
+                          <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                             <View style={{ ...appStyles.row }}>
                               <CustomText
                                 text={"Alex.D To Score 10+ Points | "}
@@ -687,14 +687,13 @@ const styles = StyleSheet.create({
   main: {
     gap: sizeHelper.calHp(20),
     flex: 1,
-    // backgroundColor: "#F5F5F5",
     backgroundColor: theme.colors.white,
   },
   imgCircle: {
-    width: 30,
-    height: 30,
-    borderRadius: 50,
-    borderWidth: 1,
+    width: sizeHelper.calWp(50),
+    height: sizeHelper.calHp(50),
+    borderRadius: sizeHelper.calHp(50),
+    borderWidth: sizeHelper.calWp(2),
     borderColor: theme.colors.white,
   },
 });

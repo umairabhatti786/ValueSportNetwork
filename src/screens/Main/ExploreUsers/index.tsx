@@ -1,13 +1,4 @@
-import {
-  FlatList,
-  FlatListComponent,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { appStyles } from "../../../utils/GlobalStyles";
 import sizeHelper from "../../../utils/Helpers";
@@ -16,69 +7,83 @@ import { images } from "../../../assets/pngs";
 import CustomText from "../../../components/Text";
 import { fonts } from "../../../utils/Themes/fonts";
 import ScreenLayout from "../../../components/ScreenLayout";
-import CustomButton from "../../../components/Button";
+import User from "../../../components/User";
 
 const ExploreUsers = ({ navigation }: any) => {
-  const User = () => {
-    return (
-      <View
-        style={{
-          width: 110,
-          //height: 130,
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-          padding: 10,
-          borderWidth: 0.5,
-          borderRadius: 10,
-          borderColor: "#B6B6B6",
-        }}
-      >
-        <Image
-          source={images.player1}
-          resizeMode="contain"
-          style={{ height: 35, width: 35, borderRadius: 50 }}
-        />
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <View style={{ ...appStyles.row }}>
-            <CustomText text={"ggghhhh"} size={20} />
-            <Image
-              resizeMode="contain"
-              source={images.check}
-              style={{
-                height: sizeHelper.calHp(20),
-                width: sizeHelper.calWp(20),
-                marginLeft: sizeHelper.calWp(10),
-                borderRadius: 50,
-              }}
-            />
-          </View>
-          <CustomText
-            text={"Last 30d: +179.43u"}
-            color={theme.colors.gray700}
-            size={14}
-          />
-        </View>
-        <CustomButton
-          text="Follow"
-          bgColor={theme.colors.secondry}
-          borderRadius={10}
-          height={44}
-        />
-      </View>
-    );
-  };
   const tabBarData = [
-    { pic: images.check, name: "Verified Experts" },
-    { pic: images.fire, name: "Hot Streak Bettors" },
-    { pic: images.network, name: "Popular Bettors" },
+    { pic: images.check, name: "Verified Experts", screen: "VerifiedExperts" },
+    {
+      pic: images.fire,
+      name: "Hot Streak Bettors",
+      screen: "HotStreakBettors",
+    },
+    { pic: images.network, name: "Popular Bettors", screen: "PopularBettors" },
+  ];
+  const ExpertUsers = [
+    {
+      name: "Marc Alex",
+      pic: images.player1,
+      info: "Last 30d: +179.43u",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player2,
+      info: "Last 30d: +179.43u",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player3,
+      info: "Last 30d: +179.43u",
+      isFollowing: false,
+    },
+  ];
+  const PopularBettors = [
+    {
+      name: "Marc Alex",
+      pic: images.player1,
+      info: "200k  Followers",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player4,
+      info: "200k  Followers",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player2,
+      info: "200k  Followers",
+      isFollowing: false,
+    },
+  ];
+  const HotBettors = [
+    {
+      name: "Marc Alex",
+      pic: images.player4,
+      info: "30 days Streak",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player3,
+      info: "30 days Streak",
+      isFollowing: false,
+    },
+    {
+      name: "Marc Alex",
+      pic: images.player1,
+      info: "30 days Streak",
+      isFollowing: false,
+    },
   ];
   const Header = () => {
     return (
       <View
         style={{
           ...appStyles.row,
-          // gap: sizeHelper.calWp(20),
           backgroundColor: theme.colors.white,
         }}
       >
@@ -106,6 +111,9 @@ const ExploreUsers = ({ navigation }: any) => {
       </View>
     );
   };
+  const handleTabPress = (screen: string) => {
+    navigation.navigate(screen);
+  };
   return (
     <ScreenLayout style={styles.main}>
       <Header />
@@ -122,7 +130,7 @@ const ExploreUsers = ({ navigation }: any) => {
           size={16}
         />
       </View>
-
+      {/* tabs */}
       <View
         style={{
           ...appStyles.row,
@@ -130,15 +138,16 @@ const ExploreUsers = ({ navigation }: any) => {
         }}
       >
         {tabBarData.map((item, index) => (
-          <View
+          <TouchableOpacity
+            onPress={() => handleTabPress(item.screen)}
             key={index}
             style={{
-              width: 111,
-              height: 36,
-              borderRadius: 10,
-              gap: 10,
-              borderWidth: 0.5,
-              padding: 3,
+              width: sizeHelper.calWp(210),
+              height: sizeHelper.calHp(60),
+              borderRadius: sizeHelper.calWp(20),
+              gap: sizeHelper.calWp(10),
+              borderWidth: sizeHelper.calWp(0.6),
+              paddingLeft: sizeHelper.calWp(6),
               borderColor: "#B6B6B6",
               ...appStyles.row,
             }}
@@ -146,7 +155,10 @@ const ExploreUsers = ({ navigation }: any) => {
             <Image
               source={item.pic}
               resizeMode="contain"
-              style={{ height: 30, width: 30 }}
+              style={{
+                height: sizeHelper.calHp(40),
+                width: sizeHelper.calWp(40),
+              }}
             />
             <View>
               <CustomText text={item.name} size={14} fontWeight="700" />
@@ -167,30 +179,102 @@ const ExploreUsers = ({ navigation }: any) => {
                 />
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
-
+      {/* user map  Experts*/}
       <View>
         <View
           style={{
             ...appStyles.row,
             justifyContent: "space-between",
-            marginTop: 10,
+            marginTop: sizeHelper.calHp(15),
           }}
         >
           <CustomText text={"Experts"} size={18} fontWeight="700" />
+          <CustomText text={"See All"} color={theme.colors.gray700} size={16} />
+        </View>
+
+        <View
+          style={{
+            ...appStyles.row,
+            justifyContent: "space-between",
+            marginTop: sizeHelper.calHp(15),
+          }}
+        >
+          {ExpertUsers.map((item, index) => {
+            return (
+              <User
+                key={index}
+                img={item.pic}
+                info={item.info}
+                name={item.name}
+              />
+            );
+          })}
+        </View>
+      </View>
+      {/* user map  Popular Bettors*/}
+      <View>
+        <View
+          style={{
+            ...appStyles.row,
+            justifyContent: "space-between",
+            marginTop: sizeHelper.calHp(15),
+          }}
+        >
+          <CustomText text={"Popular Bettors"} size={18} fontWeight="700" />
           <CustomText text={"See All"} color={theme.colors.gray700} size={16} />
         </View>
         <View
           style={{
             ...appStyles.row,
             justifyContent: "space-between",
-            marginTop: 10,
+            marginTop: sizeHelper.calHp(15),
           }}
         >
-          {[1, 2, 3].map((index) => {
-            return <User />;
+          {PopularBettors.map((item, index) => {
+            return (
+              <User
+                key={index}
+                img={item.pic}
+                info={item.info}
+                name={item.name}
+              />
+            );
+          })}
+        </View>
+      </View>
+      {/* user map  Hot Bettors*/}
+      <View>
+        <View
+          style={{
+            ...appStyles.row,
+            justifyContent: "space-between",
+            marginTop: sizeHelper.calHp(15),
+          }}
+        >
+          <CustomText text={"Hot Bettors"} size={18} fontWeight="700" />
+          <CustomText text={"See All"} color={theme.colors.gray700} size={16} />
+        </View>
+        <View
+          style={{
+            ...appStyles.row,
+            justifyContent: "space-between",
+            marginTop: sizeHelper.calHp(15),
+          }}
+        >
+          {HotBettors.map((item, index) => {
+            return (
+              <User
+                key={index}
+                img={item.pic}
+                info={item.info}
+                name={item.name}
+                bgColor={theme.colors.primary}
+                isHot
+              />
+            );
           })}
         </View>
       </View>
@@ -208,18 +292,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: sizeHelper.calWp(40),
   },
   rectangle: {
-    //height: 20,
-    borderRadius: 12,
+    borderRadius: sizeHelper.calWp(22),
     backgroundColor: theme.colors.primary,
-    paddingHorizontal: 52,
-    paddingVertical: 20,
-    gap: 10,
+    paddingHorizontal: sizeHelper.calWp(60),
+    paddingVertical: sizeHelper.calHp(35),
+    gap: sizeHelper.calHp(20),
   },
   imgCircle: {
-    width: 10,
-    height: 10,
-    borderRadius: 50,
-    borderWidth: 1,
+    width: sizeHelper.calWp(20),
+    height: sizeHelper.calHp(15),
+    borderRadius: sizeHelper.calHp(50),
+    borderWidth: sizeHelper.calHp(1),
     borderColor: theme.colors.white,
   },
 });

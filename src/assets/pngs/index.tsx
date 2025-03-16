@@ -77,11 +77,8 @@ export const images = {
   //tayyab added
   nba: require("../pngs/nba.png"),
   lakers: require("../pngs/lakers.png"),
-  player1: require("../pngs/player_1.png"),
-  player2: require("../pngs/player2.png"),
-  player3: require("../pngs/player3.png"),
-  player4: require("../pngs/player4.png"),
   check: require("../pngs/check.png"),
+  check2: require("../pngs/check2.png"),
   plusBox: require("../pngs/plusBox.png"),
   heart: require("../pngs/heart.png"),
   downArrowCircled: require("../pngs/downArrowCircled.png"),
@@ -95,4 +92,10 @@ export const images = {
   bars: require("../pngs/bars.png"),
   fire: require("../pngs/fire.png"),
   network: require("../pngs/network.png"),
+  // players
+  player1: require("../pngs/player_1.png"),
+  player2: require("../pngs/player2.png"),
+  player3: require("../pngs/player3.png"),
+  player4: require("../pngs/player4.png"),
+  player5: require("../pngs/player5.png"),
 };

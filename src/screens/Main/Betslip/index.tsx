@@ -1,7 +1,6 @@
 import {
   Image,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -10,11 +9,9 @@ import React, { useState } from "react";
 import ScreenLayout from "../../../components/ScreenLayout";
 import sizeHelper from "../../../utils/Helpers";
 import { theme } from "../../../utils/Themes";
-import CustomHeader from "../../../components/Header";
 import CustomText from "../../../components/Text";
 import { images } from "../../../assets/pngs";
 import { appStyles } from "../../../utils/GlobalStyles";
-import { fonts } from "../../../utils/Themes/fonts";
 import CustomButton from "../../../components/Button";
 
 const Betslip = ({ navigation }: any) => {
@@ -26,24 +23,27 @@ const Betslip = ({ navigation }: any) => {
     return (
       <View
         style={{
-          borderWidth: 0.3,
+          borderWidth: sizeHelper.calWp(0.6),
           borderColor: "#B2B2B2",
-          borderRadius: 10,
-          padding: 15,
+          borderRadius: sizeHelper.calWp(15),
+          padding: sizeHelper.calWp(20),
           ...appStyles.row,
           justifyContent: "space-between",
-          marginTop: 20,
+          marginTop: sizeHelper.calHp(35),
         }}
       >
-        <View style={{ ...appStyles.row, gap: 10 }}>
+        <View style={{ ...appStyles.row, gap: sizeHelper.calWp(15) }}>
           <Image
             source={logo}
             resizeMode="contain"
-            style={{ height: 15, width: 15 }}
+            style={{
+              height: sizeHelper.calHp(30),
+              width: sizeHelper.calWp(30),
+            }}
           />
           <CustomText text={"Fanduel"} size={20} />
         </View>
-        <View style={{ ...appStyles.row, gap: 30 }}>
+        <View style={{ ...appStyles.row, gap: sizeHelper.calWp(40) }}>
           <View style={{ ...appStyles.row }}>
             <CustomText text={"Yes "} size={20} />
             <CustomText text={"-100"} size={20} color={theme.colors.gray700} />
@@ -69,14 +69,14 @@ const Betslip = ({ navigation }: any) => {
             <View
               style={{
                 backgroundColor: theme.colors.primary,
-                borderRadius: 50,
-                width: 20,
-                height: 20,
+                borderRadius: sizeHelper.calWp(50),
+                width: sizeHelper.calWp(35),
+                height: sizeHelper.calHp(35),
                 alignItems: "center",
                 justifyContent: "center",
                 position: "absolute",
-                left: 50,
-                bottom: 10,
+                left: sizeHelper.calWp(90),
+                bottom: sizeHelper.calHp(15),
               }}
             >
               <CustomText text={"1"} color={theme.colors.white} size={20} />
@@ -144,9 +144,9 @@ const Betslip = ({ navigation }: any) => {
         {/* border line */}
         <View
           style={{
-            borderBottomWidth: 0.5,
+            borderBottomWidth: sizeHelper.calWp(0.6),
             borderBottomColor: theme.colors.gray500,
-            marginHorizontal: -30,
+            marginHorizontal: sizeHelper.calHp(-40),
           }}
         />
         {/* 1 */}
@@ -167,23 +167,22 @@ const Betslip = ({ navigation }: any) => {
           {/* card */}
           <View
             style={{
-              marginTop: 15,
+              marginTop: sizeHelper.calHp(25),
               shadowColor: "#000",
-              shadowOpacity: 0.2,
-              shadowRadius: 5,
-              elevation: 4, // Android shadow
-              borderRadius: 10, // Apply border radius to match inside View
-              backgroundColor: theme.colors.white, // Ensure shadow is visible
-              padding: 2, // Add slight padding to separate shadow from inner view
+              shadowOpacity: sizeHelper.calHp(0.2),
+              shadowRadius: sizeHelper.calHp(15),
+              elevation: 4,
+              borderRadius: sizeHelper.calHp(15),
+              backgroundColor: theme.colors.white,
             }}
           >
             <View
               style={{
                 backgroundColor: theme.colors.white,
                 borderColor: theme.colors.grayF6,
-                borderRadius: 10,
-                borderWidth: 0.6,
-                overflow: "hidden", // Prevents child components from casting shadows outside the border
+                borderRadius: sizeHelper.calHp(15),
+                borderWidth: sizeHelper.calHp(0.6),
+                overflow: "hidden",
               }}
             >
               {/* 1.1 */}
@@ -191,8 +190,8 @@ const Betslip = ({ navigation }: any) => {
                 style={{
                   ...appStyles.row,
                   justifyContent: "space-between",
-                  marginVertical: 10,
-                  marginHorizontal: 20,
+                  marginVertical: sizeHelper.calHp(15),
+                  marginHorizontal: sizeHelper.calWp(30),
                 }}
               >
                 {/* texts */}
@@ -218,12 +217,12 @@ const Betslip = ({ navigation }: any) => {
                 <View
                   style={{
                     ...appStyles.row,
-                    borderWidth: 0.5,
-                    borderRadius: 5,
+                    borderWidth: sizeHelper.calHp(0.6),
+                    borderRadius: sizeHelper.calHp(10),
                     borderColor: theme.colors.grayD9,
-                    width: 78,
-                    height: 21,
-                    gap: 4,
+                    width: sizeHelper.calWp(150),
+                    height: sizeHelper.calHp(40),
+                    gap: sizeHelper.calHp(4),
                     justifyContent: "center",
                   }}
                 >
@@ -248,11 +247,11 @@ const Betslip = ({ navigation }: any) => {
               {/* 1.2 */}
               <View
                 style={{
-                  marginHorizontal: 15,
-                  marginVertical: 10,
+                  marginHorizontal: sizeHelper.calHp(30),
+                  marginVertical: sizeHelper.calWp(20),
                   ...appStyles.row,
                   flexWrap: "wrap",
-                  gap: 10,
+                  gap: sizeHelper.calHp(15),
                   justifyContent: "center",
                 }}
               >
@@ -345,10 +344,10 @@ const Betslip = ({ navigation }: any) => {
               <View style={styles.line} />
               <View
                 style={{
-                  marginHorizontal: 15,
-                  marginVertical: 5,
+                  marginHorizontal: sizeHelper.calHp(30),
+                  marginVertical: sizeHelper.calHp(10),
                   ...appStyles.row,
-                  gap: 10,
+                  gap: sizeHelper.calHp(15),
                 }}
               >
                 <Image
@@ -356,7 +355,7 @@ const Betslip = ({ navigation }: any) => {
                   style={{
                     height: sizeHelper.calHp(40),
                     width: sizeHelper.calWp(40),
-                    borderRadius: 50,
+                    borderRadius: sizeHelper.calWp(50),
                   }}
                 />
                 <TextInput placeholder="Add a note or tag..." />
@@ -377,43 +376,50 @@ const Betslip = ({ navigation }: any) => {
           style={{
             ...appStyles.row,
             justifyContent: "space-between",
-            paddingVertical: 10,
-            paddingHorizontal: 20,
+            paddingVertical: sizeHelper.calHp(20),
+            paddingHorizontal: sizeHelper.calWp(40),
             backgroundColor: theme.colors.grayF6,
-            borderWidth: 0.3,
+            borderWidth: sizeHelper.calHp(0.5),
             borderColor: "#B2B2B2",
-            borderRadius: 10,
-            marginTop: 20,
+            borderRadius: sizeHelper.calHp(15),
+            marginTop: sizeHelper.calHp(40),
           }}
         >
           <CustomText text={"Edit Bets"} size={16} />
           <Image
             source={images.edit}
             resizeMode="contain"
-            style={{ height: 15, width: 15 }}
+            style={{
+              height: sizeHelper.calHp(25),
+              width: sizeHelper.calWp(25),
+            }}
           />
         </View>
         {/* 3 */}
         <View
           style={{
-            borderWidth: 0.3,
+            borderWidth: sizeHelper.calHp(0.5),
             borderColor: "#B2B2B2",
-            borderRadius: 10,
-            padding: 10,
+            // padding: 10,
+            padding: sizeHelper.calHp(20),
             ...appStyles.row,
             justifyContent: "space-between",
-            marginVertical: 20,
+            marginVertical: sizeHelper.calHp(40),
+            borderRadius: sizeHelper.calHp(15),
           }}
         >
-          <View style={{ ...appStyles.row, gap: 10 }}>
+          <View style={{ ...appStyles.row, gap: sizeHelper.calHp(20) }}>
             <Image
               source={images.logo1}
               resizeMode="contain"
-              style={{ height: 15, width: 15 }}
+              style={{
+                height: sizeHelper.calHp(25),
+                width: sizeHelper.calHp(25),
+              }}
             />
             <CustomText text={"Fanduel"} size={20} />
           </View>
-          <View style={{ ...appStyles.row, gap: 30 }}>
+          <View style={{ ...appStyles.row, gap: sizeHelper.calHp(40) }}>
             <View style={{ ...appStyles.row }}>
               <CustomText text={"Yes "} size={20} />
               <CustomText
@@ -436,14 +442,17 @@ const Betslip = ({ navigation }: any) => {
           style={{
             ...appStyles.row,
             justifyContent: "space-between",
-            paddingVertical: 20,
+            paddingVertical: sizeHelper.calHp(35),
             marginHorizontal: sizeHelper.calWp(40),
           }}
         >
           <Image
             source={images.bars}
             resizeMode="contain"
-            style={{ height: 35, width: 35 }}
+            style={{
+              height: sizeHelper.calHp(70),
+              width: sizeHelper.calWp(70),
+            }}
           />
           <CustomButton
             text="Track Picks"
@@ -473,15 +482,16 @@ const styles = StyleSheet.create({
     width: sizeHelper.calWp(44),
   },
   line: {
-    borderBottomWidth: 0.5,
+    borderBottomWidth: sizeHelper.calWp(0.6),
     borderBottomColor: theme.colors.gray500,
   },
   reteBar: {
-    width: 130,
-    height: 22,
-    borderRadius: 5,
-    borderWidth: 0.3,
-    paddingHorizontal: 5,
+    // width: 130,
+    width: sizeHelper.calWp(250),
+    height: sizeHelper.calHp(40),
+    borderRadius: sizeHelper.calHp(10),
+    borderWidth: sizeHelper.calWp(0.6),
+    paddingHorizontal: sizeHelper.calWp(10),
     ...appStyles.row,
     justifyContent: "space-between",
   },

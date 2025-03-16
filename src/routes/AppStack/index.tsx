@@ -18,6 +18,10 @@ import OddsConverter from "../../screens/Main/BettingTools/OddsConverter";
 import picks from "../../screens/Main/Picks";
 import Betslip from "../../screens/Main/Betslip";
 import ExploreUsers from "../../screens/Main/ExploreUsers";
+import VerifiedExperts from "../../screens/Main/VerifiedExperts";
+import HotStreakBettors from "../../screens/Main/HotStreakBettors";
+import PopularBettors from "../../screens/Main/PopularBettors";
+
 export type AppStackParamList = {
   Login: undefined;
   Signup: undefined;
@@ -37,6 +41,9 @@ export type AppStackParamList = {
   Picks: undefined;
   Betslip: undefined;
   ExploreUsers: undefined;
+  VerifiedExperts: undefined;
+  HotStreakBettors: undefined;
+  PopularBettors: undefined;
 };
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -75,6 +82,9 @@ const AppStack = () => {
       <Stack.Screen name={"Picks"} component={picks} />
       <Stack.Screen name={"Betslip"} component={Betslip} />
       <Stack.Screen name={"ExploreUsers"} component={ExploreUsers} />
+      <Stack.Screen name={"VerifiedExperts"} component={VerifiedExperts} />
+      <Stack.Screen name={"HotStreakBettors"} component={HotStreakBettors} />
+      <Stack.Screen name={"PopularBettors"} component={PopularBettors} />
     </Stack.Navigator>
   );
 };
