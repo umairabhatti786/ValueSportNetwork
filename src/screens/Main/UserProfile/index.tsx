@@ -496,7 +496,8 @@ const UserProfile = ({ navigation }: any) => {
 
           <DetailContaner
             title={"My Accounts"}
-            onPress={() => navigation.navigate("MyAccounts")}
+            //onPress={() => navigation.navigate("MyAccounts")}
+            onPress={() => navigation.navigate("UserHistory")}
           />
         </View>
 
