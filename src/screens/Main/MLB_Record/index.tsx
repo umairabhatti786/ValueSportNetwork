@@ -221,72 +221,15 @@ const MLB_Record = ({ navigation }: any) => {
       </View>
     );
   };
-  const DetailContaner = ({ day, ROI, onPress }: any) => {
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        style={{
-          ...styles.btn_container,
-          alignItems: "center",
-          justifyContent: "center",
-          width: "31%",
-        }}
-      >
-        <View style={{ gap: sizeHelper.calHp(3) }}>
-          <CustomText
-            text={day}
-            color={theme.colors.half_black}
-            size={20}
-            fontWeight="700"
-            fontFam={fonts.Inter_Bold}
-          />
-          <CustomText
-            text={"$0.00"}
-            color={theme.colors.blue100}
-            size={30}
-            style={{ marginTop: sizeHelper.calHp(5) }}
-            fontWeight="700"
-            fontFam={fonts.Inter_Bold}
-          />
-          <CustomText
-            text={"0-0-0"}
-            color={theme.colors.secondry}
-            size={20}
-            fontWeight="400"
-            fontFam={fonts.Inter_Light}
-          />
-          <View style={{ ...appStyles.row }}>
-            <CustomText
-              text={"ROI "}
-              color={theme.colors.gray500}
-              size={20}
-              style={{ marginTop: sizeHelper.calHp(10) }}
-              fontWeight="400"
-              fontFam={fonts.Inter_Light}
-            />
-            <CustomText
-              text={ROI}
-              color={theme.colors.secondry}
-              size={20}
-              style={{ marginTop: sizeHelper.calHp(10) }}
-              fontWeight="400"
-              fontFam={fonts.Inter_Light}
-            />
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+
   const StreakConatiner = () => {
     return (
       <>
-        <View style={{ ...appStyles.rowjustify }}>
+        <View style={{ ...appStyles.rowjustify, gap: sizeHelper.calWp(20) }}>
           <View
             style={{
               ...styles.btn_container,
               paddingHorizontal: sizeHelper.calWp(30),
-              width: "49%",
-              height: sizeHelper.calHp(140),
             }}
           >
             <View style={{ gap: sizeHelper.calHp(3) }}>
@@ -323,8 +266,6 @@ const MLB_Record = ({ navigation }: any) => {
             style={{
               ...styles.btn_container,
               paddingHorizontal: sizeHelper.calWp(30),
-              width: "49%",
-              height: sizeHelper.calHp(140),
             }}
           >
             <View style={{ gap: sizeHelper.calHp(3) }}>
@@ -354,121 +295,7 @@ const MLB_Record = ({ navigation }: any) => {
       </>
     );
   };
-  //   const ScrorePoints = ({ icon, bgColor }: any) => {
-  //     return (
-  //       <View style={{ gap: sizeHelper.calHp(15) }}>
-  //         <View
-  //           style={{
-  //             ...appStyles.row,
-  //             justifyContent: "space-between",
-  //           }}
-  //         >
-  //           <View style={{ ...appStyles.row }}>
-  //             <View style={{ ...appStyles.row }}>
-  //               <View
-  //                 style={{
-  //                   height: sizeHelper.calHp(60),
-  //                   width: sizeHelper.calWp(60),
-  //                   backgroundColor: bgColor,
-  //                   borderRadius: sizeHelper.calHp(50),
-  //                   alignItems: "center",
-  //                   justifyContent: "center",
-  //                 }}
-  //               >
-  //                 <Image
-  //                   //source={images.check3}
-  //                   source={icon}
-  //                   resizeMode="contain"
-  //                   style={{
-  //                     height: sizeHelper.calHp(30),
-  //                     width: sizeHelper.calWp(30),
-  //                   }}
-  //                 />
-  //               </View>
-  //               <View
-  //                 style={{
-  //                   height: sizeHelper.calHp(30),
-  //                   width: sizeHelper.calWp(30),
-  //                   backgroundColor: theme.colors.white,
-  //                   borderRadius: sizeHelper.calHp(50),
-  //                   borderWidth: sizeHelper.calHp(0.6),
-  //                   borderColor: "#AEAEAE",
-  //                   alignItems: "center",
-  //                   justifyContent: "center",
-  //                   marginLeft: sizeHelper.calWp(-20),
-  //                   alignSelf: "flex-end",
-  //                 }}
-  //               >
-  //                 <Image
-  //                   source={images.leakers}
-  //                   resizeMode="contain"
-  //                   style={{
-  //                     height: sizeHelper.calHp(30),
-  //                     width: sizeHelper.calWp(30),
-  //                   }}
-  //                 />
-  //               </View>
-  //             </View>
-  //             <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-  //               <View style={{ ...appStyles.row }}>
-  //                 <CustomText text={"LAD "} size={20} />
-  //                 <CustomText
-  //                   text={"-+200  |  "}
-  //                   size={16}
-  //                   color={theme.colors.gray500}
-  //                 />
-  //                 <CustomText text={"0.1u"} size={16} />
-  //               </View>
-  //               <CustomText
-  //                 text={"NYY 3-6 |Final 10/25/24"}
-  //                 size={16}
-  //                 color={theme.colors.gray500}
-  //               />
-  //             </View>
-  //           </View>
-
-  //           {/* Icons Section */}
-  //           <View style={{ ...appStyles.row, gap: sizeHelper.calWp(25) }}>
-  //             {/* Plus Icon */}
-  //             <View
-  //               style={{
-  //                 ...appStyles.row,
-  //                 gap: sizeHelper.calWp(10),
-  //               }}
-  //             >
-  //               <Image
-  //                 source={images.plusBox}
-  //                 resizeMode="contain"
-  //                 style={{
-  //                   height: sizeHelper.calWp(25),
-  //                   width: sizeHelper.calWp(25),
-  //                 }}
-  //               />
-  //               <CustomText text={"20"} size={20} color={theme.colors.gray700} />
-  //             </View>
-
-  //             {/* Heart Icon */}
-  //             <View
-  //               style={{
-  //                 ...appStyles.row,
-  //                 gap: sizeHelper.calWp(10),
-  //               }}
-  //             >
-  //               <Image
-  //                 source={images.heart}
-  //                 resizeMode="contain"
-  //                 style={{
-  //                   height: sizeHelper.calWp(25),
-  //                   width: sizeHelper.calWp(25),
-  //                 }}
-  //               />
-  //               <CustomText text={"10"} size={20} color={theme.colors.gray700} />
-  //             </View>
-  //           </View>
-  //         </View>
-  //       </View>
-  //     );
-  //   };
+ 
   return (
     <ScreenLayout style={styles.main}>
       <ScrollView
@@ -486,7 +313,7 @@ const MLB_Record = ({ navigation }: any) => {
 
         <ScorePoints
           playerName="Marc"
-          playerImage={images.player5}
+          playerImage={images.player}
           verifiedIcon={images.check}
           items={[
             {
@@ -646,6 +473,7 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.gray500,
     gap: sizeHelper.calWp(17),
     padding: sizeHelper.calWp(20),
+    flex: 1,
   },
   imgCircle: {
     width: sizeHelper.calWp(50),

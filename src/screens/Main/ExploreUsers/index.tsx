@@ -22,19 +22,19 @@ const ExploreUsers = ({ navigation }: any) => {
   const ExpertUsers = [
     {
       name: "Marc Alex",
-      pic: images.player1,
+      pic: images.player,
       info: "Last 30d: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player2,
+      pic: images.player,
       info: "Last 30d: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player3,
+      pic: images.player,
       info: "Last 30d: +179.43u",
       isFollowing: false,
     },
@@ -42,19 +42,19 @@ const ExploreUsers = ({ navigation }: any) => {
   const PopularBettors = [
     {
       name: "Marc Alex",
-      pic: images.player1,
+      pic: images.player,
       info: "200k  Followers",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player4,
+      pic: images.player,
       info: "200k  Followers",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player2,
+      pic: images.player,
       info: "200k  Followers",
       isFollowing: false,
     },
@@ -62,34 +62,35 @@ const ExploreUsers = ({ navigation }: any) => {
   const HotBettors = [
     {
       name: "Marc Alex",
-      pic: images.player4,
+      pic: images.player,
       info: "30 days Streak",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player3,
+      pic: images.player,
       info: "30 days Streak",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player1,
+      pic: images.player,
       info: "30 days Streak",
       isFollowing: false,
     },
   ];
   const Header = () => {
     return (
-      <View
+      <TouchableOpacity
+      onPress={() => navigation.goBack()}
+
         style={{
           ...appStyles.row,
           backgroundColor: theme.colors.white,
         }}
       >
-        <TouchableOpacity
+        <View
           style={{ paddingRight: sizeHelper.calWp(20) }}
-          onPress={() => navigation.goBack()}
         >
           <Image
             style={{
@@ -99,7 +100,7 @@ const ExploreUsers = ({ navigation }: any) => {
             source={images.left_arrow_black}
             resizeMode="contain"
           />
-        </TouchableOpacity>
+        </View>
         <CustomText
           text={"Explore Users"}
           color={theme.colors.black}
@@ -108,7 +109,7 @@ const ExploreUsers = ({ navigation }: any) => {
           numberOfLines={2}
           size={30}
         />
-      </View>
+      </TouchableOpacity>
     );
   };
   const handleTabPress = (screen: string) => {
@@ -164,17 +165,17 @@ const ExploreUsers = ({ navigation }: any) => {
               <CustomText text={item.name} size={14} fontWeight="700" />
               {/* imgs */}
               <View style={{ ...appStyles.row }}>
-                <Image source={images.player1} style={styles.imgCircle} />
+                <Image source={images.player} style={styles.imgCircle} />
                 <Image
-                  source={images.player2}
+                  source={images.player}
                   style={[styles.imgCircle, { marginLeft: -3 }]}
                 />
                 <Image
-                  source={images.player3}
+                  source={images.player}
                   style={[styles.imgCircle, { marginLeft: -3 }]}
                 />
                 <Image
-                  source={images.player4}
+                  source={images.player}
                   style={[styles.imgCircle, { marginLeft: -3 }]}
                 />
               </View>

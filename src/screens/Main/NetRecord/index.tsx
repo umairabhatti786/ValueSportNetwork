@@ -193,12 +193,82 @@ const NetRecord = ({ navigation }: any) => {
       </>
     );
   };
+
+  const ScorerCard=({img,isCheck}:any)=>{
+
+    return(
+      <View style={{ ...appStyles.row }}>
+      <View style={{ ...appStyles.row }}>
+        <View
+          style={{
+            height: sizeHelper.calHp(60),
+            width: sizeHelper.calWp(60),
+            backgroundColor: isCheck?"#EBF3FE":"#FEEBEB",
+            borderRadius: sizeHelper.calHp(50),
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            source={img}
+            resizeMode="contain"
+            style={{
+              height: sizeHelper.calHp(30),
+              width: sizeHelper.calWp(30),
+            }}
+          />
+        </View>
+        <View
+          style={{
+            height: sizeHelper.calHp(30),
+            width: sizeHelper.calWp(30),
+            backgroundColor: theme.colors.white,
+            borderRadius: sizeHelper.calHp(50),
+            borderWidth: sizeHelper.calHp(0.6),
+            borderColor: "#AEAEAE",
+            alignItems: "center",
+            justifyContent: "center",
+            marginLeft: sizeHelper.calWp(-20),
+            alignSelf: "flex-end",
+          }}
+        >
+          <Image
+            source={images.leakers}
+            resizeMode="contain"
+            style={{
+              height: sizeHelper.calHp(30),
+              width: sizeHelper.calWp(30),
+            }}
+          />
+        </View>
+      </View>
+      <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+        <View style={{ ...appStyles.row }}>
+          <CustomText text={"Alex.D To Score 10+ Points | "} size={16} />
+          <CustomText
+            text={"-100"}
+            size={16}
+            color={theme.colors.gray500}
+          />
+        </View>
+        <CustomText
+          text={"MEM @NYK  |  1/28  1:30am"}
+          size={16}
+          color={theme.colors.gray500}
+        />
+      </View>
+    </View>
+      
+    )
+
+
+  }
   const ScrorePoints = () => {
     return (
       <View style={{ gap: sizeHelper.calHp(15) }}>
         <View style={{ ...appStyles.row }}>
           <Image
-            source={images.player5}
+            source={images.player}
             resizeMode="contain"
             style={{
               height: sizeHelper.calWp(60),
@@ -297,200 +367,35 @@ const NetRecord = ({ navigation }: any) => {
             borderRadius: 10,
             gap: sizeHelper.calHp(20),
             padding: sizeHelper.calHp(20),
-            width: "70%",
-            alignSelf: "center",
+            width: "80%",
+            alignSelf:"flex-end",
           }}
         >
           {/* 1st */}
-          <View style={{ ...appStyles.row }}>
-            <View style={{ ...appStyles.row }}>
-              <View
-                style={{
-                  height: sizeHelper.calHp(60),
-                  width: sizeHelper.calWp(60),
-                  backgroundColor: "#FEEBEB",
-                  borderRadius: sizeHelper.calHp(50),
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  source={images.cross}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-              <View
-                style={{
-                  height: sizeHelper.calHp(30),
-                  width: sizeHelper.calWp(30),
-                  backgroundColor: theme.colors.white,
-                  borderRadius: sizeHelper.calHp(50),
-                  borderWidth: sizeHelper.calHp(0.6),
-                  borderColor: "#AEAEAE",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginLeft: sizeHelper.calWp(-20),
-                  alignSelf: "flex-end",
-                }}
-              >
-                <Image
-                  source={images.leakers}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-            </View>
-            <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-              <View style={{ ...appStyles.row }}>
-                <CustomText text={"Alex.D To Score 10+ Points | "} size={16} />
-                <CustomText
-                  text={"-100"}
-                  size={16}
-                  color={theme.colors.gray500}
-                />
-              </View>
-              <CustomText
-                text={"MEM @NYK  |  1/28  1:30am"}
-                size={16}
-                color={theme.colors.gray500}
-              />
-            </View>
-          </View>
+          <ScorerCard
+          img={images.cross}
+          />
+       
           {/* 2nd */}
-          <View style={{ ...appStyles.row }}>
-            <View style={{ ...appStyles.row }}>
-              <View
-                style={{
-                  height: sizeHelper.calHp(60),
-                  width: sizeHelper.calWp(60),
-                  backgroundColor: "#EBF3FE",
-                  borderRadius: sizeHelper.calHp(50),
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  source={images.check3}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-              <View
-                style={{
-                  height: sizeHelper.calHp(30),
-                  width: sizeHelper.calWp(30),
-                  backgroundColor: theme.colors.white,
-                  borderRadius: sizeHelper.calHp(50),
-                  borderWidth: sizeHelper.calHp(0.6),
-                  borderColor: "#AEAEAE",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginLeft: sizeHelper.calWp(-20),
-                  alignSelf: "flex-end",
-                }}
-              >
-                <Image
-                  source={images.leakers}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-            </View>
-            <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-              <View style={{ ...appStyles.row }}>
-                <CustomText text={"Alex.D To Score 10+ Points | "} size={16} />
-                <CustomText
-                  text={"-100"}
-                  size={16}
-                  color={theme.colors.gray500}
-                />
-              </View>
-              <CustomText
-                text={"MEM @NYK  |  1/28  1:30am"}
-                size={16}
-                color={theme.colors.gray500}
-              />
-            </View>
-          </View>
+          <ScorerCard
+          img={images.check3}
+          isCheck
+
+          />
+         <ScorerCard
+          img={images.check3}
+          isCheck
+
+          />
+         
           {/* 3nd */}
-          <View style={{ ...appStyles.row }}>
-            <View style={{ ...appStyles.row }}>
-              <View
-                style={{
-                  height: sizeHelper.calHp(60),
-                  width: sizeHelper.calWp(60),
-                  backgroundColor: "#EBF3FE",
-                  borderRadius: sizeHelper.calHp(50),
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  source={images.check3}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-              <View
-                style={{
-                  height: sizeHelper.calHp(30),
-                  width: sizeHelper.calWp(30),
-                  backgroundColor: theme.colors.white,
-                  borderRadius: sizeHelper.calHp(50),
-                  borderWidth: sizeHelper.calHp(0.6),
-                  borderColor: "#AEAEAE",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginLeft: sizeHelper.calWp(-20),
-                  alignSelf: "flex-end",
-                }}
-              >
-                <Image
-                  source={images.leakers}
-                  resizeMode="contain"
-                  style={{
-                    height: sizeHelper.calHp(30),
-                    width: sizeHelper.calWp(30),
-                  }}
-                />
-              </View>
-            </View>
-            <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-              <View style={{ ...appStyles.row }}>
-                <CustomText text={"Alex.D To Score 10+ Points | "} size={16} />
-                <CustomText
-                  text={"-100"}
-                  size={16}
-                  color={theme.colors.gray500}
-                />
-              </View>
-              <CustomText
-                text={"MEM @NYK  |  1/28  1:30am"}
-                size={16}
-                color={theme.colors.gray500}
-              />
-            </View>
-          </View>
+         
         </View>
       </View>
     );
   };
+
+  
 
   return (
     <ScreenLayout style={styles.main}>

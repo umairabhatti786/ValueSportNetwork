@@ -265,7 +265,10 @@ const TopGames = ({ navigation }: any) => {
     <>
       <ScreenLayout style={styles.main}>
         <ScrollView
-          contentContainerStyle={{ paddingBottom: sizeHelper.calHp(30),gap:sizeHelper.calHp(30) }}
+          contentContainerStyle={{
+            paddingBottom: sizeHelper.calHp(30),
+            gap: sizeHelper.calHp(30),
+          }}
         >
           <Header />
 
@@ -471,6 +474,12 @@ const TopGames = ({ navigation }: any) => {
           {/* <SportsContainer /> */}
         </ScrollView>
       </ScreenLayout>
+
+      <TouchableOpacity style={styles.editContainer}
+      onPress={()=>navigation.navigate("Betslip")}
+      >
+        <Image style={styles.editImg} source={images.editing} />
+      </TouchableOpacity>
     </>
   );
 };
@@ -480,6 +489,11 @@ const styles = StyleSheet.create({
   main: {
     gap: sizeHelper.calHp(30),
     flex: 1,
+  },
+  editImg: {
+    width: sizeHelper.calWp(50),
+    height: sizeHelper.calWp(50),
+    tintColor: theme.colors.white,
   },
   logo: {
     width: sizeHelper.calWp(43),
@@ -501,6 +515,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: sizeHelper.calWp(17),
     paddingHorizontal: sizeHelper.calWp(20),
+  },
+  editContainer: {
+    padding: sizeHelper.calWp(30),
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 999,
+    backgroundColor: theme.colors.primary,
+    position: "absolute",
+    bottom: sizeHelper.calHp(30),
+    right: sizeHelper.calWp(30),
   },
   divider: {
     width: "100%",

@@ -17,15 +17,16 @@ import ScreenLayout from "../../../components/ScreenLayout";
 const UserHistory = ({ navigation }: any) => {
   const Header = () => {
     return (
-      <View
+      <TouchableOpacity
+      onPress={() => navigation.goBack()}
+
         style={{
           ...appStyles.row,
           backgroundColor: theme.colors.white,
         }}
       >
-        <TouchableOpacity
+        <View
           style={{ paddingRight: sizeHelper.calWp(40) }}
-          onPress={() => navigation.goBack()}
         >
           <Image
             style={{
@@ -35,16 +36,16 @@ const UserHistory = ({ navigation }: any) => {
             source={images.left_arrow_black}
             resizeMode="contain"
           />
-        </TouchableOpacity>
+        </View>
         <CustomText
-          text={"User History"}
+          text={"Marc’s Bet History"}
           color={theme.colors.black}
           fontWeight="700"
           fontFam={fonts.BricolageGrotesque_Bold}
           numberOfLines={2}
           size={30}
         />
-      </View>
+      </TouchableOpacity>
     );
   };
   const DetailContaner = ({ day, ROI, onPress }: any) => {
@@ -233,7 +234,9 @@ const UserHistory = ({ navigation }: any) => {
     color,
   }: any) => {
     return (
-      <View
+      <TouchableOpacity
+      onPress={() => navigation.navigate("CLV")}
+
         style={{
           borderRadius: sizeHelper.calWp(20),
           backgroundColor: bgColor,
@@ -275,7 +278,7 @@ const UserHistory = ({ navigation }: any) => {
             fontFam={fonts.Inter_Light}
           />
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
@@ -284,7 +287,6 @@ const UserHistory = ({ navigation }: any) => {
       <>
         <View style={{ ...appStyles.rowjustify }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("CLV")}
             style={{
               ...styles.btn_container,
               paddingHorizontal: sizeHelper.calWp(30),

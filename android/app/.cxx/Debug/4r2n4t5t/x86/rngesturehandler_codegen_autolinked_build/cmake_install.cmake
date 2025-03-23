@@ -1,4 +1,4 @@
-# Install script for directory: /Users/mac/Documents/Value-Sports-Network-/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni
+# Install script for directory: /Users/mac/Documents/ValueSportNetwork/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

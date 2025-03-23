@@ -98,12 +98,10 @@ export const images = {
   fire2: require("../pngs/fire2.png"),
   network: require("../pngs/network.png"),
   // players
-  player1: require("../pngs/player_1.png"),
-  player2: require("../pngs/player2.png"),
-  player3: require("../pngs/player3.png"),
-  player4: require("../pngs/player4.png"),
-  player5: require("../pngs/player5.png"),
 
+  player: require("../pngs/player.png"),
+
+  
   //logos
   ballLogo1: require("../pngs/ballLogo1.png"),
   ballLogo2: require("../pngs/ballLogo2.png"),
@@ -114,6 +112,7 @@ export const images = {
   logo4: require("../pngs/logo4.png"),
   leakers: require("../pngs/leakers.png"),
   modalLogo: require("../pngs/modalLogo.png"),
+  editing: require("../pngs/editing.png"),
 
   graphLine: require("../pngs/graphLine.png"),
   qrCode: require("../pngs/qrCode.png"),

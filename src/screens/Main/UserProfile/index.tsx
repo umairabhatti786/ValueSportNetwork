@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import ScreenLayout from "../../../components/ScreenLayout";
 import sizeHelper from "../../../utils/Helpers";
 import { appStyles } from "../../../utils/GlobalStyles";
@@ -10,6 +17,7 @@ import CustomButton from "../../../components/Button";
 import SetUpProgress from "../../../components/SetUpProgress";
 import { useState } from "react";
 import Modal from "react-native-modal";
+import { windowWidth } from "../../../utils/Commons/Dimention";
 
 const UserProfile = ({ navigation }: any) => {
   const Tabs = ["Spread", "Total", "Moneyline"];
@@ -481,18 +489,18 @@ const UserProfile = ({ navigation }: any) => {
           </TouchableOpacity>
           <View style={{ ...appStyles.row, gap: sizeHelper.calWp(10) }}>
             <TouchableOpacity
-              style={styles.header_box}
+              style={styles.social_box}
               onPress={() => setModalVisible(true)}
             >
               <Image style={styles.img} source={images.share} />
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.header_box}
+              style={styles.social_box}
               onPress={() => setModalVisible2(true)}
             >
               <Image style={styles.img} source={images.scan_code} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.header_box}>
+            <TouchableOpacity style={styles.social_box}>
               <Image style={styles.img} source={images.filter} />
             </TouchableOpacity>
           </View>
@@ -508,7 +516,7 @@ const UserProfile = ({ navigation }: any) => {
           />
 
           <DetailContaner
-            title={"My Accounts"}
+            title={"Bet History"}
             //onPress={() => navigation.navigate("MyAccounts")}
             onPress={() => navigation.navigate("UserHistory")}
           />
@@ -549,7 +557,7 @@ const UserProfile = ({ navigation }: any) => {
             })}
           </View>
 
-          <TouchableOpacity style={styles.header_box}>
+          <TouchableOpacity style={styles.social_box}>
             <Image style={styles.img} source={images.filter} />
           </TouchableOpacity>
         </View>
@@ -588,7 +596,7 @@ const UserProfile = ({ navigation }: any) => {
               />
             </View>
 
-            <TouchableOpacity style={styles.header_box}>
+            <TouchableOpacity style={styles.social_box}>
               <Image style={styles.img} source={images.filter} />
             </TouchableOpacity>
           </View>
@@ -597,7 +605,7 @@ const UserProfile = ({ navigation }: any) => {
             return (
               <View style={appStyles.rowjustify}>
                 <View style={{ ...appStyles.row }}>
-                  <Image source={images.player1} style={styles.imgCircle} />
+                  <Image source={images.player} style={styles.imgCircle} />
                   <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                     <View
                       style={{ ...appStyles.row, gap: sizeHelper.calWp(5) }}
@@ -689,9 +697,9 @@ const UserProfile = ({ navigation }: any) => {
             style={{
               borderWidth: sizeHelper.calWp(0.6),
               borderColor: "#B6B6B6",
-              borderRadius: sizeHelper.calWp(15),
+              borderRadius: sizeHelper.calWp(30),
               marginTop: sizeHelper.calHp(20),
-              padding: sizeHelper.calWp(20),
+              padding: sizeHelper.calWp(25),
             }}
           >
             <View
@@ -718,14 +726,12 @@ const UserProfile = ({ navigation }: any) => {
                   />
                 </View>
               </View>
-              <Image
-                source={images.filter}
-                resizeMode="contain"
-                style={{
-                  height: sizeHelper.calHp(60),
-                  width: sizeHelper.calWp(60),
-                }}
-              />
+              <TouchableOpacity
+              style={styles.social_box}
+              onPress={() => setModalVisible(true)}
+            >
+              <Image style={styles.img} source={images.filter} />
+            </TouchableOpacity>
             </View>
 
             {LeaguesData.map((item, index) => {
@@ -777,12 +783,13 @@ const UserProfile = ({ navigation }: any) => {
                       }}
                     />
                   </View>
-                  <View style={{ marginLeft: sizeHelper.calWp(20) }}>
+                  <View >
                     <CustomText text={item.code} size={20} />
                     <CustomText
                       text={item.percentage}
-                      size={20}
-                      color={theme.colors.secondry}
+                      size={15}
+                      style={{textAlign:"right"}}
+                      color={"#A4A4A4"}
                     />
                   </View>
                 </View>
@@ -795,12 +802,16 @@ const UserProfile = ({ navigation }: any) => {
         <View>
           <Modal
             isVisible={modalVisible}
-            animationIn="slideInLeft"
-            animationOut="slideOutLeft"
+          
+            deviceWidth={windowWidth}
+            backdropColor="rgba(0,0,0,0.1)"
+            onBackButtonPress={() => setModalVisible?.(false)}
             onBackdropPress={() => setModalVisible(false)} // Allows closing when tapping outside
             style={{ margin: 0 }}
           >
-            <View style={styles.modalOverlay}>
+            <TouchableWithoutFeedback 
+            onPress={()=>setModalVisible(false)}
+            >
               <View style={styles.modal}>
                 {/* head */}
                 <View
@@ -816,7 +827,7 @@ const UserProfile = ({ navigation }: any) => {
                   >
                     <Image
                       resizeMode="contain"
-                      source={images.player1}
+                      source={images.player}
                       style={{
                         height: sizeHelper.calWp(60),
                         width: sizeHelper.calWp(60),
@@ -845,15 +856,8 @@ const UserProfile = ({ navigation }: any) => {
                       />
                     </View>
                   </View>
-                  <TouchableOpacity onPress={() => setModalVisible(false)}>
-                    <Image
-                      source={images.share}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(60),
-                        width: sizeHelper.calWp(50),
-                      }}
-                    />
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.share} />
                   </TouchableOpacity>
                 </View>
                 {/* qr code */}
@@ -862,8 +866,9 @@ const UserProfile = ({ navigation }: any) => {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: sizeHelper.calHp(55),
-                    borderWidth: sizeHelper.calHp(1),
+                    borderWidth: sizeHelper.calHp(0.5),
                     borderRadius: sizeHelper.calHp(20),
+                    borderColor:"#797D86"
                   }}
                 >
                   <Image
@@ -876,16 +881,12 @@ const UserProfile = ({ navigation }: any) => {
                     }}
                   />
                 </View>
-                <View style={{ ...appStyles.rowjustify }}>
+                <View style={{ ...appStyles.rowjustify,gap:sizeHelper.calWp(25) }}>
                   <View
                     style={{
                       ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(30),
-                      paddingVertical: sizeHelper.calHp(16),
-                      paddingHorizontal: sizeHelper.calWp(40),
-                    }}
+                      ...styles.sportContainer
+                }}
                   >
                     <Image
                       source={images.fire2}
@@ -897,22 +898,26 @@ const UserProfile = ({ navigation }: any) => {
                       }}
                     />
                     <View>
-                      <CustomText text={"0 DAYS"} size={22} />
-                      <CustomText text={"Hot Streak"} size={18} />
+                      <CustomText 
+                      color="#757575"
+                      fontFam={fonts.Inter_SemiBold}
+                      fontWeight="600"
+                      text={"0 DAYS"} size={22} />
+                      <CustomText 
+                         color="#757575"
+                         fontFam={fonts.Inter_Light}
+                         fontWeight="400"
+                      text={"Hot Streak"} size={18} />
                     </View>
                   </View>
                   <View
                     style={{
                       ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(30),
-                      paddingVertical: sizeHelper.calHp(16),
-                      paddingHorizontal: sizeHelper.calWp(40),
-                    }}
+                      ...styles.sportContainer
+                }}
                   >
                     <Image
-                      source={images.fire2}
+                      source={images.ball}
                       resizeMode="contain"
                       style={{
                         height: sizeHelper.calHp(60),
@@ -921,25 +926,36 @@ const UserProfile = ({ navigation }: any) => {
                       }}
                     />
                     <View>
-                      <CustomText text={"0 DAYS"} size={22} />
-                      <CustomText text={"Hot Streak"} size={18} />
+                      <CustomText 
+                      color="#757575"
+                      fontFam={fonts.Inter_SemiBold}
+                      fontWeight="600"
+                      text={"NBA"} size={22} />
+                      <CustomText 
+                         color="#757575"
+                         fontFam={fonts.Inter_Light}
+                         fontWeight="400"
+                      text={"Top Sport"} size={18} />
                     </View>
                   </View>
                 </View>
               </View>
-            </View>
+            </TouchableWithoutFeedback>
           </Modal>
         </View>
         {/* ....modal   2...... */}
         <View>
           <Modal
             isVisible={modalVisible2}
-            animationIn="slideInLeft"
-            animationOut="slideOutLeft"
-            onBackdropPress={() => setModalVisible(false)} // Allows closing when tapping outside
+            deviceWidth={windowWidth}
+            backdropColor="rgba(0,0,0,0.1)"
+            onBackButtonPress={() => setModalVisible2?.(false)}
+            onBackdropPress={() => setModalVisible2(false)} // Allows closing when tapping outside
             style={{ margin: 0 }}
           >
-            <View style={styles.modalOverlay}>
+            <TouchableWithoutFeedback
+            onPress={()=>setModalVisible2(false)}
+            >
               <View style={styles.modal}>
                 {/* head */}
                 <View
@@ -955,7 +971,7 @@ const UserProfile = ({ navigation }: any) => {
                   >
                     <Image
                       resizeMode="contain"
-                      source={images.player1}
+                      source={images.player}
                       style={{
                         height: sizeHelper.calWp(60),
                         width: sizeHelper.calWp(60),
@@ -1030,7 +1046,7 @@ const UserProfile = ({ navigation }: any) => {
                     }}
                   >
                     <View style={{ ...appStyles.row }}>
-                      <Image source={images.player1} style={styles.imgCircle} />
+                      <Image source={images.player} style={styles.imgCircle} />
                       <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                         <View style={{ ...appStyles.row }}>
                           <CustomText
@@ -1061,7 +1077,7 @@ const UserProfile = ({ navigation }: any) => {
                     }}
                   >
                     <View style={{ ...appStyles.row }}>
-                      <Image source={images.player1} style={styles.imgCircle} />
+                      <Image source={images.player} style={styles.imgCircle} />
                       <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                         <View style={{ ...appStyles.row }}>
                           <CustomText
@@ -1092,7 +1108,7 @@ const UserProfile = ({ navigation }: any) => {
                     }}
                   >
                     <View style={{ ...appStyles.row }}>
-                      <Image source={images.player1} style={styles.imgCircle} />
+                      <Image source={images.player} style={styles.imgCircle} />
                       <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                         <View style={{ ...appStyles.row }}>
                           <CustomText
@@ -1136,47 +1152,7 @@ const UserProfile = ({ navigation }: any) => {
                         </View>
                       </View>
                     </View>
-                    {/* 3 */}
-                    {/* <View
-                      style={{
-                        borderWidth: sizeHelper.calHp(0.5),
-                        borderColor: theme.colors.gray500,
-                        borderRadius: 10,
-                        gap: sizeHelper.calHp(20),
-                        padding: sizeHelper.calHp(20),
-                        width: "70%",
-                        alignSelf: "center",
-                      }}
-                    >
-                      {[1, 2, 3].map((i) => {
-                        return (
-                          <View style={{ ...appStyles.row }}>
-                            <Image
-                              source={images.player1}
-                              style={styles.imgCircle}
-                            />
-                            <View style={{ marginLeft: sizeHelper.calWp(20) }}>
-                              <View style={{ ...appStyles.row }}>
-                                <CustomText
-                                  text={"Alex.D To Score 10+ Points | "}
-                                  size={16}
-                                />
-                                <CustomText
-                                  text={"-100"}
-                                  size={16}
-                                  color={theme.colors.gray500}
-                                />
-                              </View>
-                              <CustomText
-                                text={"MEM @NYK  |  1/28  1:30am"}
-                                size={16}
-                                color={theme.colors.gray500}
-                              />
-                            </View>
-                          </View>
-                        );
-                      })}
-                    </View> */}
+                    
                   </View>
                 </View>
 
@@ -1187,110 +1163,25 @@ const UserProfile = ({ navigation }: any) => {
                     padding: sizeHelper.calHp(3),
                   }}
                 >
-                  <TouchableOpacity
-                    onPress={() => setModalVisible2(false)}
-                    style={{
-                      ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(15),
-                      paddingVertical: sizeHelper.calHp(10),
-                      paddingHorizontal: sizeHelper.calWp(10),
-                    }}
-                  >
-                    <Image
-                      source={images.share}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(40),
-                        width: sizeHelper.calWp(40),
-                        alignSelf: "center",
-                      }}
-                    />
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.share} />
                   </TouchableOpacity>
-                  <View
-                    style={{
-                      ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(15),
-                      paddingVertical: sizeHelper.calHp(10),
-                      paddingHorizontal: sizeHelper.calWp(10),
-                    }}
-                  >
-                    <Image
-                      source={images.link}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(40),
-                        width: sizeHelper.calWp(40),
-                        alignSelf: "center",
-                      }}
-                    />
-                  </View>
-                  <View
-                    style={{
-                      ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(15),
-                      paddingVertical: sizeHelper.calHp(10),
-                      paddingHorizontal: sizeHelper.calWp(10),
-                    }}
-                  >
-                    <Image
-                      source={images.whatsapp}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(40),
-                        width: sizeHelper.calWp(40),
-                        alignSelf: "center",
-                      }}
-                    />
-                  </View>
-                  <View
-                    style={{
-                      ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(15),
-                      paddingVertical: sizeHelper.calHp(10),
-                      paddingHorizontal: sizeHelper.calWp(10),
-                    }}
-                  >
-                    <Image
-                      source={images.twitter}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(40),
-                        width: sizeHelper.calWp(40),
-                        alignSelf: "center",
-                      }}
-                    />
-                  </View>
-                  <View
-                    style={{
-                      ...appStyles.row,
-                      gap: sizeHelper.calWp(30),
-                      borderWidth: sizeHelper.calWp(0.6),
-                      borderRadius: sizeHelper.calWp(15),
-                      paddingVertical: sizeHelper.calHp(10),
-                      paddingHorizontal: sizeHelper.calWp(10),
-                    }}
-                  >
-                    <Image
-                      source={images.msg}
-                      resizeMode="contain"
-                      style={{
-                        height: sizeHelper.calHp(40),
-                        width: sizeHelper.calWp(40),
-                        alignSelf: "center",
-                      }}
-                    />
-                  </View>
+
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.link} />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.whatsapp} />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.twitter} />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.social_box}>
+                    <Image style={styles.img} source={images.msg} />
+                  </TouchableOpacity>
                 </View>
               </View>
-            </View>
+            </TouchableWithoutFeedback>
           </Modal>
         </View>
       </ScreenLayout>
@@ -1328,26 +1219,26 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   btn2: {
-    width: sizeHelper.calWp(200),
-    height: sizeHelper.calHp(40),
-    borderRadius: sizeHelper.calWp(10),
+    borderRadius: sizeHelper.calWp(15),
     borderWidth: sizeHelper.calWp(1),
     borderColor: theme.colors.gray700,
     alignItems: "center",
     justifyContent: "center",
+    paddingVertical:sizeHelper.calWp(11),
+    paddingHorizontal:sizeHelper.calWp(20)
   },
   divider: {
     width: "100%",
     height: sizeHelper.calHp(0.5),
     backgroundColor: theme.colors.gray700,
   },
-  header_box: {
+  social_box: {
     borderWidth: 0.5,
     borderColor: "#B6B6B6",
     borderRadius: sizeHelper.calWp(10),
     alignItems: "center",
     justifyContent: "center",
-    padding: sizeHelper.calWp(10),
+    padding: sizeHelper.calWp(12),
   },
   img: {
     width: sizeHelper.calWp(35),
@@ -1376,12 +1267,20 @@ const styles = StyleSheet.create({
   },
   modal: {
     width: "90%",
-    height: sizeHelper.calHp(800),
-    backgroundColor: "white",
-    padding: sizeHelper.calHp(30),
+    backgroundColor: theme.colors.white,
+    paddingHorizontal: sizeHelper.calHp(40),
+    paddingVertical: sizeHelper.calHp(30),
     borderRadius: sizeHelper.calHp(30),
-    gap: sizeHelper.calHp(60),
-    //justifyContent: "space-between",
+    gap: sizeHelper.calHp(30),
     margin: sizeHelper.calWp(10),
+    alignSelf: "center",
   },
+  sportContainer:{
+    gap: sizeHelper.calWp(10),
+    borderWidth: sizeHelper.calWp(0.6),
+    borderRadius: sizeHelper.calWp(35),
+    paddingVertical: sizeHelper.calHp(16),
+    paddingHorizontal: sizeHelper.calWp(40),
+    flex:1
+  }
 });

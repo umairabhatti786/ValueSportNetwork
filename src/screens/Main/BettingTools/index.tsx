@@ -10,7 +10,8 @@ import { fonts } from "../../../utils/Themes/fonts";
 const BettingTools = ({ navigation }: any) => {
   const Header = () => {
     return (
-      <View
+      <TouchableOpacity
+      onPress={()=>navigation.goBack()}
         style={{
           ...appStyles.row,
           gap: sizeHelper.calWp(20),
@@ -33,7 +34,7 @@ const BettingTools = ({ navigation }: any) => {
           numberOfLines={2}
           size={30}
         />
-      </View>
+      </TouchableOpacity>
     );
   };
 

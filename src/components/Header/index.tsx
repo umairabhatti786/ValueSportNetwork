@@ -1,16 +1,19 @@
-import { View, Image } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import { theme } from "../../utils/Themes";
 import { fonts } from "../../utils/Themes/fonts";
 import sizeHelper from "../../utils/Helpers";
 import { appStyles } from "../../utils/GlobalStyles";
 import { images } from "../../assets/pngs";
 import CustomText from "../Text";
+import { useNavigation } from "@react-navigation/native";
 const CustomHeader = ({
     title,
 
 }:any ) => {
+  const navigation=useNavigation()
   return (
-    <View
+    <TouchableOpacity
+    onPress={()=>navigation.goBack()}
     style={{
         ...appStyles.row,
         gap: sizeHelper.calWp(20),
@@ -33,7 +36,7 @@ const CustomHeader = ({
       numberOfLines={2}
       size={30}
     />
-  </View>
+  </TouchableOpacity>
   );
 };
 export default CustomHeader;

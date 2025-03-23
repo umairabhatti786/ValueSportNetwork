@@ -13,6 +13,7 @@ import CustomText from "../../../components/Text";
 import { images } from "../../../assets/pngs";
 import { appStyles } from "../../../utils/GlobalStyles";
 import CustomButton from "../../../components/Button";
+import { fonts } from "../../../utils/Themes/fonts";
 
 const Betslip = ({ navigation }: any) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -69,24 +70,33 @@ const Betslip = ({ navigation }: any) => {
             <View
               style={{
                 backgroundColor: theme.colors.primary,
-                borderRadius: sizeHelper.calWp(50),
+                borderRadius: sizeHelper.calWp(35),
                 width: sizeHelper.calWp(35),
-                height: sizeHelper.calHp(35),
+                height: sizeHelper.calWp(35),
                 alignItems: "center",
                 justifyContent: "center",
                 position: "absolute",
-                left: sizeHelper.calWp(90),
+                right: sizeHelper.calWp(-20),
                 bottom: sizeHelper.calHp(15),
               }}
             >
-              <CustomText text={"1"} color={theme.colors.white} size={20} />
+              <CustomText text={"1"} 
+              fontWeight="700"
+              fontFam={fonts.Inter_Bold}
+              color={theme.colors.white} size={20} />
             </View>
           </View>
+          <TouchableOpacity
+          onPress={()=>navigation.goBack()}
+          >
           <Image
             source={images.downArrowCircled}
             style={styles.downArrow}
             resizeMode="contain"
           />
+
+          </TouchableOpacity>
+         
         </View>
         {/* tabs */}
         <View
@@ -220,9 +230,9 @@ const Betslip = ({ navigation }: any) => {
                     borderWidth: sizeHelper.calHp(0.6),
                     borderRadius: sizeHelper.calHp(10),
                     borderColor: theme.colors.grayD9,
-                    width: sizeHelper.calWp(150),
                     height: sizeHelper.calHp(40),
-                    gap: sizeHelper.calHp(4),
+                    paddingHorizontal:sizeHelper.calWp(15),
+                    gap: sizeHelper.calHp(10),
                     justifyContent: "center",
                   }}
                 >
@@ -351,14 +361,19 @@ const Betslip = ({ navigation }: any) => {
                 }}
               >
                 <Image
-                  source={images.player1}
+                  source={images.player}
                   style={{
                     height: sizeHelper.calHp(40),
                     width: sizeHelper.calWp(40),
                     borderRadius: sizeHelper.calWp(50),
                   }}
                 />
-                <TextInput placeholder="Add a note or tag..." />
+                <TextInput 
+                style={{
+                  fontSize:sizeHelper.calHp(16)
+                }}
+                placeholderTextColor={"#737373"}
+                placeholder="Add a note or tag..." />
               </View>
             </View>
           </View>
@@ -456,7 +471,7 @@ const Betslip = ({ navigation }: any) => {
           />
           <CustomButton
             text="Track Picks"
-            width={"90%"}
+            width={"85%"}
             onPress={() => navigation.navigate("ExploreUsers")}
           />
         </View>
@@ -478,16 +493,16 @@ const styles = StyleSheet.create({
     marginHorizontal: sizeHelper.calWp(40),
   },
   downArrow: {
-    height: sizeHelper.calHp(45),
-    width: sizeHelper.calWp(44),
+    height: sizeHelper.calWp(50),
+    width: sizeHelper.calWp(50),
   },
   line: {
-    borderBottomWidth: sizeHelper.calWp(0.6),
-    borderBottomColor: theme.colors.gray500,
+    height: sizeHelper.calWp(0.4),
+    backgroundColor: theme.colors.gray500,
   },
   reteBar: {
     // width: 130,
-    width: sizeHelper.calWp(250),
+    width:"47%",
     height: sizeHelper.calHp(40),
     borderRadius: sizeHelper.calHp(10),
     borderWidth: sizeHelper.calWp(0.6),

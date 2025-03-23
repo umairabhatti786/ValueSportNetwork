@@ -11,16 +11,16 @@ import Player from "../../../components/Player";
 
 const picks = ({ navigation }: any) => {
   const SpreadPlayersData = [
-    { pic: images.player1, name: "Marc Alex", time: "1hr ago" },
-    { pic: images.player2, name: "Marc Alex", time: "1hr ago" },
+    { pic: images.player, name: "Marc Alex", time: "1hr ago" },
+    { pic: images.player, name: "Marc Alex", time: "1hr ago" },
   ];
   const MoneylinePlayersData = [
-    { pic: images.player3, name: "Marc Alex", time: "1hr ago" },
-    { pic: images.player4, name: "Marc Alex", time: "1hr ago" },
+    { pic: images.player, name: "Marc Alex", time: "1hr ago" },
+    { pic: images.player, name: "Marc Alex", time: "1hr ago" },
   ];
   const PlayersData = [
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "1hr ago",
       record: " | NBA Record: +179.43u",
@@ -63,7 +63,7 @@ const picks = ({ navigation }: any) => {
                 }}
               >
                 <View style={{ ...appStyles.row }}>
-                  <Image source={images.player1} style={styles.imgCircle} />
+                  <Image source={images.player} style={styles.imgCircle} />
                   <View style={{ marginLeft: sizeHelper.calWp(20) }}>
                     <View style={{ ...appStyles.row }}>
                       <CustomText
@@ -489,7 +489,10 @@ const picks = ({ navigation }: any) => {
               {MoneylinePlayersData.map((item, index) => {
                 return (
                   <View style={{ gap: sizeHelper.calHp(20) }}>
-                    <Player pic={item.pic} name={item.name} time={item.time} />
+                    <Player 
+                                        onPress={()=>navigation.navigate("UserProfile")}
+
+                    pic={item.pic} name={item.name} time={item.time} />
                   </View>
                 );
               })}
@@ -513,6 +516,7 @@ const picks = ({ navigation }: any) => {
                   <Player
                     pic={item.pic}
                     name={item.name}
+                    onPress={()=>navigation.navigate("UserProfile")}
                     time={item.time}
                     record={item.record}
                   />
@@ -525,16 +529,16 @@ const picks = ({ navigation }: any) => {
                   >
                     {/* imgs */}
                     <View style={{ ...appStyles.row }}>
-                      <Image source={images.player1} style={styles.imgCircle} />
+                      <Image source={images.player} style={styles.imgCircle} />
                       <Image
-                        source={images.player2}
+                        source={images.player}
                         style={[
                           styles.imgCircle,
                           { marginLeft: sizeHelper.calWp(-30) },
                         ]}
                       />
                       <Image
-                        source={images.player3}
+                        source={images.player}
                         style={[
                           styles.imgCircle,
                           { marginLeft: sizeHelper.calWp(-30) },
@@ -573,7 +577,7 @@ const picks = ({ navigation }: any) => {
                       return (
                         <View style={{ ...appStyles.row }}>
                           <Image
-                            source={images.player1}
+                            source={images.player}
                             style={styles.imgCircle}
                           />
                           <View style={{ marginLeft: sizeHelper.calWp(20) }}>

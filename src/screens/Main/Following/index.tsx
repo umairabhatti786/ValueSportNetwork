@@ -20,85 +20,85 @@ const Following = ({ navigation }: any) => {
   const [activeTab, setActiveTab] = useState(0);
   const PlayersData = [
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
     },
     {
-      pic: images.player3,
+      pic: images.player,
       name: "Marc Alex",
       time: "Last 30d",
       record: " +172u",
@@ -215,7 +215,7 @@ const Following = ({ navigation }: any) => {
               key={index}
               style={{
                 gap: sizeHelper.calHp(30),
-                paddingHorizontal: sizeHelper.calWp(40),
+                // paddingHorizontal: sizeHelper.calWp(40),
                 paddingVertical: sizeHelper.calHp(25),
                 borderBottomWidth: sizeHelper.calWp(0.6),
                 borderBottomColor: theme.colors.gray500,
@@ -236,13 +236,7 @@ const Following = ({ navigation }: any) => {
   };
   return (
     <ScreenLayout style={styles.main}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          gap: sizeHelper.calHp(30),
-          paddingBottom: sizeHelper.calHp(30),
-        }}
-      >
+     
         <Header />
         {/* tabs */}
         <View
@@ -267,9 +261,9 @@ const Following = ({ navigation }: any) => {
               >
                 <View
                   style={{
-                    paddingHorizontal: isActive
-                      ? sizeHelper.calWp(50)
-                      : sizeHelper.calWp(10),
+                    paddingHorizontal:
+                       sizeHelper.calWp(50),
+                      
                     paddingVertical: sizeHelper.calWp(10),
                     alignItems: "center",
                     backgroundColor: isActive
@@ -284,6 +278,12 @@ const Following = ({ navigation }: any) => {
             );
           })}
         </View>
+        <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: sizeHelper.calHp(30),
+        }}
+      >
 
         <PlayerVw />
       </ScrollView>

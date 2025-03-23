@@ -151,9 +151,7 @@ const CLV = ({ navigation }: any) => {
               >
                 <View
                   style={{
-                    paddingHorizontal: isActive
-                      ? sizeHelper.calWp(50)
-                      : sizeHelper.calWp(10),
+                    paddingHorizontal: sizeHelper.calWp(50),
                     paddingVertical: sizeHelper.calWp(10),
                     alignItems: "center",
                     backgroundColor: isActive

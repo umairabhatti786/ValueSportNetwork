@@ -33,172 +33,173 @@ const HotStreakBettors = ({ navigation }: any) => {
   const HotStreakBettorsData = [
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
     {
       name: "Marc Alex",
-      pic: images.player5,
+      pic: images.player,
       info: "All time: +179.43u",
       isFollowing: false,
     },
   ];
   const Header = () => {
     return (
-      <View
+      <TouchableOpacity
+      onPress={() => navigation.goBack()}
+
         style={{
           ...appStyles.row,
           backgroundColor: theme.colors.white,
         }}
       >
-        <TouchableOpacity
+        <View
           style={{ paddingHorizontal: sizeHelper.calWp(40) }}
-          onPress={() => navigation.goBack()}
         >
           <Image
             style={{
@@ -208,7 +209,7 @@ const HotStreakBettors = ({ navigation }: any) => {
             source={images.left_arrow_black}
             resizeMode="contain"
           />
-        </TouchableOpacity>
+        </View>
         <CustomText
           text={"Hot Streak Bettors"}
           color={theme.colors.black}
@@ -217,7 +218,7 @@ const HotStreakBettors = ({ navigation }: any) => {
           numberOfLines={2}
           size={30}
         />
-      </View>
+      </TouchableOpacity>
     );
   };
   return (
